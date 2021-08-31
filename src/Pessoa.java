@@ -1,4 +1,5 @@
 
+
 public class Pessoa {
 	private String nome;
 	private String cpf, rg;
@@ -14,11 +15,17 @@ public class Pessoa {
 	}
 	
 	public String getCpf() {
-		return cpf;
+		return ValidaCPF.imprimeCPF(cpf);
 	}
 	
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	public boolean setCpf(String cpf) {
+		if(ValidaCPF.isCPF(cpf)==true) {
+			this.cpf = cpf;
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	public String getRg() {
@@ -35,8 +42,5 @@ public class Pessoa {
 	public void setEstadoCivil(byte estadoCivil) {
 		this.estadoCivil = estadoCivil;
 	}
-	
-	
-	
 	
 }
