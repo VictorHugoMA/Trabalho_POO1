@@ -4,6 +4,7 @@ public class Pessoa {
 	private String nome;
 	private String cpf, rg;
 	private byte estadoCivil;
+	private Endereco enderecoP;
 	
 	
 	public String getNome() {
@@ -42,5 +43,18 @@ public class Pessoa {
 	public void setEstadoCivil(byte estadoCivil) {
 		this.estadoCivil = estadoCivil;
 	}
+
+	public Endereco getEnderecoP() {
+		return enderecoP;
+	}
+
+	public void setEnderecoP(Endereco enderecoP) {
+		this.enderecoP = enderecoP;
+	}
+	
+	
+	
+	
+	
 	
 }
