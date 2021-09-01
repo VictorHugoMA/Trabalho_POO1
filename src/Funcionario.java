@@ -1,17 +1,26 @@
-
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public abstract class Funcionario extends Pessoa{
-	private String dataAdmi;
+	private Date dataAdmi;
 	private int numCartTrab;
 	private String usuario, senha;
 	
+	SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
 	
-	public String getDataAdmi() {
+	
+	
+	public Date getDataAdmi() {
 		return dataAdmi;
 	}
-	public void setDataAdmi(String dataAdmi) {
+	public void setDataAdmi(Date dataAdmi) {
 		this.dataAdmi = dataAdmi;
 	}
+	public void setStrDataAdmi(String dataAdmi) throws ParseException {
+		this.dataAdmi = formato.parse(dataAdmi);
+	}
+	
 	public int getNumCartTrab() {
 		return numCartTrab;
 	}

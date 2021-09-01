@@ -1,7 +1,8 @@
+import java.text.ParseException;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 		Pessoa p1 = new Pessoa();
 		
 		if(p1.setCpf("15635558674")) {
@@ -14,7 +15,11 @@ public class Main {
 		}
 		
 		
+		Medico m1 = new Medico();
 		
+		m1.setStrDataAdmi("11/09/2020");
+		
+		System.out.println(m1.getDataAdmi());
 		
 		
 
