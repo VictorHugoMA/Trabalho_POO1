@@ -3,10 +3,11 @@ import java.util.ArrayList;
 public class Medico extends Funcionario{
 	private int crm;
 	private int numConsRealiz;
+	private float somaConsMes;
 	private ArrayList<String> especialidades = new ArrayList<>();
 	private ArrayList<PlanoSaude> planosAtend = new ArrayList<>();
-	
-	
+	private ArrayList<Consulta> consulta = new ArrayList<>();
+
 	
 	public Medico(ArrayList<PlanoSaude> planosAtend, String cpf) {
 		this.planosAtend = planosAtend;
@@ -36,7 +37,6 @@ public class Medico extends Funcionario{
 		this.especialidades.add(especialidades);
 	}
 	
-	
 	public int getNumConsRealiz() {
 		return numConsRealiz;
 	}
@@ -44,6 +44,14 @@ public class Medico extends Funcionario{
 		this.numConsRealiz = numConsRealiz;
 	}
 	
+	public float getSomaConsMes() {
+		return somaConsMes;
+	}
+
+	public void setSomaConsMes(float somaConsMes) {
+		this.somaConsMes = somaConsMes;
+	}
+
 	public ArrayList<PlanoSaude> getPlanosAtend() {
 		return planosAtend;
 	}
@@ -53,6 +61,36 @@ public class Medico extends Funcionario{
 	
 	public void addPlanosAtend(PlanoSaude planoAtend) {
 		this.planosAtend.add(planoAtend);
+	}
+	
+	
+	public ArrayList<Consulta> getConsulta() {
+		return consulta;
+	}
+
+
+	public void setConsulta(ArrayList<Consulta> consulta) {
+		this.consulta = consulta;
+	}
+	
+	public void addConsulta(Consulta cons) {
+		this.consulta.add(cons);
+	}
+
+
+	public void maisCons() {
+		this.setNumConsRealiz(getNumConsRealiz()+1);
+	}
+	
+	public void somaValorCons(float valor) {
+		this.setSomaConsMes(getSomaConsMes()+valor);
+	}
+
+
+	@Override
+	public float calcSalario() {
+		
+		return 0;
 	}
 	
 

@@ -1,8 +1,10 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Consulta {
-	private String dataCons;
-	private String horaCons;
+	private Date dataHoraCons;
 	private ArrayList<String> medicamentos = new ArrayList<>();
 	private String obsSintomas;
 	private String receita;
@@ -12,24 +14,34 @@ public class Consulta {
 	private Paciente paciente;
 	private ArrayList<Exame> exames = new ArrayList<>();
 	
+	
+	SimpleDateFormat formato1 = new SimpleDateFormat("dd/MM/yyyy");
+	SimpleDateFormat formato2 = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+	
 	public Consulta(Medico med, Paciente pac) {
 		this.setMedico(med);
 		this.setPaciente(pac);
 	}
 	
 	
-	public String getDataCons() {
-		return dataCons;
+	public Date getDataHoraCons() {
+		return dataHoraCons;
 	}
-	public void setDataCons(String dataCons) {
-		this.dataCons = dataCons;
+
+	public void setDataHoraCons(Date dataHoraCons) {
+		this.dataHoraCons = dataHoraCons;
 	}
-	public String getHoraCons() {
-		return horaCons;
+	
+	public String getStrDataHoraCons() {
+		return formato2.format(dataHoraCons);
 	}
-	public void setHoraCons(String horaCons) {
-		this.horaCons = horaCons;
+	
+	public void setStrDataAdmi(String dataHoraCons) throws ParseException {
+		this.dataHoraCons = formato2.parse(dataHoraCons);
 	}
+	
+
+
 	public ArrayList<String> getMedicamentos() {
 		return medicamentos;
 	}
@@ -77,6 +89,15 @@ public class Consulta {
 	}
 	public void setExames(ArrayList<Exame> exames) {
 		this.exames = exames;
+	}
+	
+	public void realizarCons() {
+		DemaisFunc.maisCons();
+		medico.addConsulta(this);
+		medico.somaValorCons(this.getValor());
+		paciente.addConsulta(this);
+		paciente.setDataUltCons(this.getDataHoraCons());
+		
 	}
 	
 	

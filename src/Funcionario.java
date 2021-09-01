@@ -17,6 +17,10 @@ public abstract class Funcionario extends Pessoa{
 	public void setDataAdmi(Date dataAdmi) {
 		this.dataAdmi = dataAdmi;
 	}
+	
+	public String getStrDataAdmi() {
+		return formato.format(dataAdmi);
+	}
 	public void setStrDataAdmi(String dataAdmi) throws ParseException {
 		this.dataAdmi = formato.parse(dataAdmi);
 	}
@@ -39,6 +43,8 @@ public abstract class Funcionario extends Pessoa{
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+	
+	public abstract float calcSalario();
 	
 	
 }

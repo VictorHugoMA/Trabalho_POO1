@@ -2,9 +2,9 @@
 public class DemaisFunc extends Funcionario {
 	private float salarioBase;
 	private String cargo;
-	private int numConsTot;
-	private int limite;
-	private static float valorGrat=1500f;
+	private static int numConsTot;
+	private static int limite;
+	private static float valorGrat;
 	
 	
 	public float getSalarioBase() {
@@ -19,21 +19,45 @@ public class DemaisFunc extends Funcionario {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-	public int getNumConsTot() {
+	
+	public static int getNumConsTot() {
 		return numConsTot;
 	}
-	public void setNumConsTot(int numConsTot) {
-		this.numConsTot = numConsTot;
+	public static void setNumConsTot(int numConsTot) {
+		DemaisFunc.numConsTot = numConsTot;
 	}
 	
+	public static int getLimite() {
+		return limite;
+	}
+	public static void setLimite(int limite) {
+		DemaisFunc.limite = limite;
+	}
+	
+	public static float getValorGrat() {
+		return valorGrat;
+	}
+	public static void setValorGrat(float valorGrat) {
+		DemaisFunc.valorGrat = valorGrat;
+	}
+	
+	@Override
 	public float calcSalario() {
-		if(this.numConsTot>this.limite) {
-			return salarioBase+valorGrat; 
+		if(DemaisFunc.numConsTot>DemaisFunc.limite) {
+			return this.salarioBase+DemaisFunc.valorGrat; 
 		}
 		else {
 			return salarioBase;
 		}
 	}
+	
+	public static void zeraCons() {
+		DemaisFunc.setNumConsTot(0);
+	}
+	public static void maisCons() {
+		DemaisFunc.setNumConsTot(getNumConsTot()+1);
+	}
+	
 	
 	
 
