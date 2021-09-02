@@ -29,7 +29,7 @@ public class Main {
 		Paciente pac1 = new Paciente();
 		Consulta c1 = new Consulta(m1 ,pac1);
 		
-		c1.setStrDataAdmi("02/09/2021 15:30");
+		c1.setStrDataHoraCons("02/09/2021 15:30");
 		c1.setValor(200f);
 		System.out.println("Data e Hora da Consulta: " + c1.getStrDataHoraCons());
 		
