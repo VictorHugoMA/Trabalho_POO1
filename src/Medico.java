@@ -7,7 +7,7 @@ public class Medico extends Funcionario{
 	private ArrayList<String> especialidades = new ArrayList<>();
 	private ArrayList<PlanoSaude> planosAtend = new ArrayList<>();
 	private ArrayList<Consulta> consulta = new ArrayList<>();
-
+	
 	
 	public Medico(ArrayList<PlanoSaude> planosAtend, String cpf) {
 		this.planosAtend = planosAtend;
@@ -23,41 +23,70 @@ public class Medico extends Funcionario{
 	public int getCrm() {
 		return crm;
 	}
-	public void setCrm(int crm) {
-		this.crm = crm;
+	
+	public boolean setCrm(int crm) {
+		if(crm>0) {
+			this.crm = crm;
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
+	
+	
 	public ArrayList<String> getEspecialidades() {
 		return especialidades;
 	}
+	
 	public void setEspecialidades(ArrayList<String> especialidades) {
 		this.especialidades = especialidades;
 	}
+	
 	
 	public void addEspecialidades(String especialidades) {
 		this.especialidades.add(especialidades);
 	}
 	
+	
 	public int getNumConsRealiz() {
 		return numConsRealiz;
 	}
-	public void setNumConsRealiz(int numConsRealiz) {
-		this.numConsRealiz = numConsRealiz;
+	
+	public boolean setNumConsRealiz(int numConsRealiz) {
+		if(numConsRealiz>0) {
+			this.numConsRealiz = numConsRealiz;
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
+	
 	
 	public float getSomaConsMes() {
 		return somaConsMes;
 	}
 
-	public void setSomaConsMes(float somaConsMes) {
-		this.somaConsMes = somaConsMes;
+	public boolean setSomaConsMes(float somaConsMes) {
+		if(somaConsMes>0) {
+			this.somaConsMes = somaConsMes;			
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
+	
 
 	public ArrayList<PlanoSaude> getPlanosAtend() {
 		return planosAtend;
 	}
+	
 	public void setPlanosAtend(ArrayList<PlanoSaude> planosAtend) {
 		this.planosAtend = planosAtend;
 	}
+	
 	
 	public void addPlanosAtend(PlanoSaude planoAtend) {
 		this.planosAtend.add(planoAtend);
@@ -67,7 +96,6 @@ public class Medico extends Funcionario{
 	public ArrayList<Consulta> getConsulta() {
 		return consulta;
 	}
-
 
 	public void setConsulta(ArrayList<Consulta> consulta) {
 		this.consulta = consulta;
@@ -92,6 +120,16 @@ public class Medico extends Funcionario{
 		
 		return 0;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Medico [crm=" + crm + ", numConsRealiz=" + numConsRealiz + ", somaConsMes=" + somaConsMes
+				+ ", especialidades=" + especialidades + ", planosAtend=" + planosAtend + ", consulta=" + consulta
+				+ "]";
+	}
+	
+	
 	
 
 }

@@ -1,4 +1,5 @@
 
+
 public class DemaisFunc extends Funcionario {
 	private float salarioBase;
 	private String cargo;
@@ -7,39 +8,90 @@ public class DemaisFunc extends Funcionario {
 	private static float valorGrat;
 	
 	
+	public DemaisFunc(String nome, String cpf, String rg, String estadoCivil, Endereco endereco, float salarioBase, String cargo) {
+		super(nome, cpf, rg, estadoCivil, endereco);
+		this.setSalarioBase(salarioBase);
+		this.setCargo(cargo);
+	}
+
+	public DemaisFunc() {
+		
+	}
+
 	public float getSalarioBase() {
 		return salarioBase;
 	}
-	public void setSalarioBase(float salarioBase) {
-		this.salarioBase = salarioBase;
+	
+	public boolean setSalarioBase(float salarioBase) {
+		if(salarioBase>0) {
+			this.salarioBase = salarioBase;
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
+	
+	
 	public String getCargo() {
 		return cargo;
 	}
-	public void setCargo(String cargo) {
-		this.cargo = cargo;
+	
+	public boolean setCargo(String cargo) {
+		if(cargo.length()>0) {
+			this.cargo = cargo;
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
+	
 	
 	public static int getNumConsTot() {
 		return numConsTot;
 	}
-	public static void setNumConsTot(int numConsTot) {
-		DemaisFunc.numConsTot = numConsTot;
+	
+	public static boolean setNumConsTot(int numConsTot) {
+		if(numConsTot>0) {
+			DemaisFunc.numConsTot = numConsTot;
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
+	
 	
 	public static int getLimite() {
 		return limite;
 	}
-	public static void setLimite(int limite) {
-		DemaisFunc.limite = limite;
+	
+	public static boolean setLimite(int limite) {
+		if(limite>0) {
+			DemaisFunc.limite = limite;
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
+	
 	
 	public static float getValorGrat() {
 		return valorGrat;
 	}
-	public static void setValorGrat(float valorGrat) {
-		DemaisFunc.valorGrat = valorGrat;
+	
+	public static boolean setValorGrat(float valorGrat) {
+		if(valorGrat>0) {
+			DemaisFunc.valorGrat = valorGrat;
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
+	
 	
 	@Override
 	public float calcSalario() {
@@ -54,6 +106,7 @@ public class DemaisFunc extends Funcionario {
 	public static void zeraCons() {
 		DemaisFunc.setNumConsTot(0);
 	}
+	
 	public static void maisCons() {
 		DemaisFunc.setNumConsTot(getNumConsTot()+1);
 	}
