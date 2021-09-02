@@ -4,6 +4,7 @@ public class Main {
 
 	public static void main(String[] args) throws ParseException {
 		Pessoa p1 = new Pessoa();
+		Endereco end = new Endereco("Joao Naves", 1000);
 		
 		System.out.print("Teste CPF: ");
 		if(p1.setCpf("15635558674")) {
@@ -36,6 +37,11 @@ public class Main {
 		System.out.println();
 		System.out.println("Data da Ultima consulta do Paciente: " + pac1.getStrDataUltCons());
 		System.out.println("Soma das Consultas do Medico: " + m1.getSomaConsMes());
+		
+		
+		Paciente pac2 = new Paciente("Victor", "15635558674", "120", "Solteiro", end, "Masc", "20/11/2001");
+		System.out.println(pac2.mostraDados());
+		
 		
 		
 		
