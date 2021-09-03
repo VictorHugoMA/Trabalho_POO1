@@ -17,6 +17,11 @@ public class Pessoa {
 		this.endereco = endereco;
 	}
 	
+	public Pessoa(String nome, String cpf) {
+		this.setNome(nome);
+		this.setCpf(cpf);
+	}
+	
 	public Pessoa(){
 		
 	}

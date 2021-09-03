@@ -23,6 +23,10 @@ public class Paciente extends Pessoa {
 		this.setStrDataNasc(dataNasc);
 	}
 	
+	public Paciente(String nome, String cpf) {
+		super(nome, cpf);
+	}
+	
 	public Paciente() {
 		
 	}

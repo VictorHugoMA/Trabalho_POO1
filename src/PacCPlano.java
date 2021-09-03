@@ -9,8 +9,21 @@ public class PacCPlano extends Paciente{
 		this.setNumCarteirinha(numCarteirinha);
 		this.setPlano(plano);
 	}
+	
+	public PacCPlano(String nome, String cpf, int numCarteirinha, PlanoSaude plano) {
+		super(nome, cpf);
+		this.setNumCarteirinha(numCarteirinha);
+		this.setPlano(plano);
+	}
+	
+	public PacCPlano(String nome, String cpf) {
+		super(nome, cpf);
+	}
 
-	public PacCPlano() {}
+	public PacCPlano() {
+		
+	}
+	
 	
 	public int getNumCarteirinha() {
 		return numCarteirinha;
