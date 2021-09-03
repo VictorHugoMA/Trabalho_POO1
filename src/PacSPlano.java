@@ -2,13 +2,22 @@ public class PacSPlano extends Paciente {
 	private boolean descEsp;
 	private float valorUltCons;
 	
-public boolean getDescEsp() {
-return descEsp;
-}
+	public boolean getDescEsp() {
+		return descEsp;
+	}
 
-public boolean setDescEsp(int descEsp) {
-		if(DescEsp>0) {
-			this.descEsp = descEsp;
+	public void setDescEsp(boolean descEsp) {
+		this.descEsp = descEsp;
+	}
+
+	public float getValorUltCons() {
+		return valorUltCons;
+	}
+
+	public boolean setValorUltCons (float valorcons){
+		
+		if(valorcons>0) {
+			this.valorUltCons = valorcons;
 			return true;
 		}
 		else {
@@ -16,17 +25,4 @@ public boolean setDescEsp(int descEsp) {
 		}
 	}
 
-public int getValorUltCons() {
-return valorcons;
-}
-
-public void setValorUltCons (float valorcons){
-	
-		if(valorcons>0) {
-			this.valorcons = valorcons;
-		}
-		else {
-			return false;
-		}
-	}
 }
