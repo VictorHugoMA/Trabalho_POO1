@@ -3,7 +3,7 @@ public class PacSPlano extends Paciente {
 	private float valorUltCons;
 	
 public boolean getDescEsp() {
-return boolean;
+return descEsp;
 }
 
 public boolean setDescEsp(int descEsp) {
