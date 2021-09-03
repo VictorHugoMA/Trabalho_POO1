@@ -11,7 +11,7 @@ public class Consulta {
 	private float valor;
 	private DemaisFunc funcMarc;
 	private Medico medico;
-	private Paciente paciente;
+	private Paciente paciente;//alterar para com plano e sem plano
 	private ArrayList<Exame> exames = new ArrayList<>();
 	
 	
