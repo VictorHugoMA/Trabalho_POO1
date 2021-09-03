@@ -1,11 +1,77 @@
-import java.util.ArrayList;
-
 public class PacCPlano extends Paciente{
-	private int crm;
-	private int numConsRealiz;
-	private float somaConsMes;
-	private ArrayList<String> especialidades = new ArrayList<>();
-	private ArrayList<PlanoSaude> planosAtend = new ArrayList<>();
-	private ArrayList<Consulta> consulta = new ArrayList<>();
+	private int numCarteirinha;
+	private String dataIngPlano;
+	private boolean carencia;
+	private PlanoSaude plano;
+
+	
+	public PacCPlano(int numCarteirinha, PlanoSaude plano) {
+		this.setNumCarteirinha(numCarteirinha);
+		this.setPlano(plano);
+	}
+
+	public PacCPlano() {}
+	
+	public int getNumCarteirinha() {
+		return numCarteirinha;
+	}
+
+
+	public boolean setNumCarteirinha(int numCarteirinha) {
+		if(numCarteirinha< 0) {
+		
+			return false;
+		
+		}else {
+			
+			this.numCarteirinha = numCarteirinha;
+			return true;
+		}
+		
+	}
+
+
+	public String getDataIngPlano() {
+		return dataIngPlano;
+	}
+
+
+	public boolean setDataIngPlano(String dataIngPlano) {
+		if(dataIngPlano.length() < 0) {
+			return false;
+		}else {
+			
+			this.dataIngPlano = dataIngPlano;
+			return true;
+		}
+		
+	}
+
+
+	public boolean isCarencia() {
+		return carencia;
+	}
+
+
+	public void setCarencia(boolean carencia) {
+		this.carencia = carencia;
+	}
+
+
+	public PlanoSaude getPlano() {
+		return plano;
+	}
+
+
+	public void setPlano(PlanoSaude plano) {
+		this.plano = plano;
+	}
+	
+	
+
+	
+	
+	
+}
 	
 	
