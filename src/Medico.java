@@ -7,11 +7,18 @@ public class Medico extends Funcionario{
 	private ArrayList<String> especialidades = new ArrayList<>();
 	private ArrayList<PlanoSaude> planosAtend = new ArrayList<>();
 	private ArrayList<Consulta> consulta = new ArrayList<>();
+	private float valorSPlano; //armazena o valor da consulta para quando o paciente nao tem plano
 	
 	
+
 	public Medico(ArrayList<PlanoSaude> planosAtend, String cpf) {
 		this.planosAtend = planosAtend;
 		this.setCpf(cpf);
+	}
+	
+	public Medico(String nome, float valorSP) {
+		this.setNome(nome);
+		this.setValorSPlano(valorSP);
 	}
 
 
@@ -104,6 +111,22 @@ public class Medico extends Funcionario{
 	public void addConsulta(Consulta cons) {
 		this.consulta.add(cons);
 	}
+	
+	
+	public float getValorSPlano() {
+		return valorSPlano;
+	}
+
+	
+	public boolean setValorSPlano(float valorSPlano) {
+		if(valorSPlano>0) {
+			this.valorSPlano = valorSPlano;
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 
 
 	public void maisCons() {
@@ -113,12 +136,23 @@ public class Medico extends Funcionario{
 	public void somaValorCons(float valor) {
 		this.setSomaConsMes(getSomaConsMes()+valor);
 	}
+	
+	public void zeraSomaValorCons() {
+		this.setSomaConsMes(0f);
+	}
 
 
 	@Override
 	public float calcSalario() {
+		if(this.getSomaConsMes()==0f && consulta!=null) {
+			for(Consulta c: consulta) {
+				this.setSomaConsMes(this.getSomaConsMes()+c.getValor());
+			}
+			return this.getSomaConsMes();
+		}else {
+			return this.getSomaConsMes();
+		}
 		
-		return 0;
 	}
 
 
