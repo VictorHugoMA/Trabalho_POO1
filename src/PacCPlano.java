@@ -10,9 +10,8 @@ public class PacCPlano extends Paciente{
 		this.setPlano(plano);
 	}
 	
-	public PacCPlano(String nome, String cpf, int numCarteirinha, PlanoSaude plano) {
+	public PacCPlano(String nome, String cpf, PlanoSaude plano) {
 		super(nome, cpf);
-		this.setNumCarteirinha(numCarteirinha);
 		this.setPlano(plano);
 	}
 	
@@ -78,6 +77,14 @@ public class PacCPlano extends Paciente{
 
 	public void setPlano(PlanoSaude plano) {
 		this.plano = plano;
+	}
+	
+	public float getValorConsP() {
+		return this.plano.getValorCons();
+	}
+	
+	public String getNomePlano() {
+		return this.plano.getNome();
 	}
 	
 	
