@@ -13,6 +13,11 @@ public class DemaisFunc extends Funcionario {
 		this.setSalarioBase(salarioBase);
 		this.setCargo(cargo);
 	}
+	
+	public DemaisFunc(String nome, String cargo) {
+		this.setNome(nome);
+		this.setCargo(cargo);
+	}
 
 	public DemaisFunc() {
 		
