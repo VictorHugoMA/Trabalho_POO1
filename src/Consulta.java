@@ -11,16 +11,24 @@ public class Consulta {
 	private float valor;
 	private DemaisFunc funcMarc;
 	private Medico medico;
-	private Paciente paciente;//alterar para com plano e sem plano
+	private PacCPlano pacCPlano;
+	private PacSPlano pacSPlano;
 	private ArrayList<Exame> exames = new ArrayList<>();
 	
 	
 	SimpleDateFormat formato1 = new SimpleDateFormat("dd/MM/yyyy");
 	SimpleDateFormat formato2 = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 	
-	public Consulta(Medico med, Paciente pac) {
+	public Consulta(Medico med, PacCPlano pac) {
 		this.setMedico(med);
-		this.setPaciente(pac);
+		this.setPacCPlano(pac);
+		this.setValor(this.pacCPlano.getValorConsP());
+	}
+	
+	public Consulta(Medico med, PacSPlano pac) {
+		this.setMedico(med);
+		this.setPacSPlano(pac);
+		this.setValor(this.medico.getValorSPlano());
 	}
 	
 	
@@ -49,6 +57,10 @@ public class Consulta {
 	
 	public void setMedicamentos(ArrayList<String> medicamentos) {
 		this.medicamentos = medicamentos;
+	}
+	
+	public void addMedicamentos(String med) {
+		this.medicamentos.add(med);
 	}
 	
 	
@@ -89,6 +101,10 @@ public class Consulta {
 		return funcMarc;
 	}
 	
+	public String getNomeFuncMarc() {
+		return this.funcMarc.getNome();
+	}
+	
 	public void setFuncMarc(DemaisFunc funcMarc) {
 		this.funcMarc = funcMarc;
 	}
@@ -103,15 +119,22 @@ public class Consulta {
 	}
 	
 	
-	public Paciente getPaciente() {
-		return paciente;
+	public PacCPlano getPacCPlano() {
+		return pacCPlano;
 	}
-	
-	public void setPaciente(Paciente paciente) {
-		this.paciente = paciente;
+
+	public void setPacCPlano(PacCPlano pacCPlano) {
+		this.pacCPlano = pacCPlano;
 	}
-	
-	
+
+	public PacSPlano getPacSPlano() {
+		return pacSPlano;
+	}
+
+	public void setPacSPlano(PacSPlano pacSPlano) {
+		this.pacSPlano = pacSPlano;
+	}
+
 	public ArrayList<Exame> getExames() {
 		return exames;
 	}
@@ -120,15 +143,51 @@ public class Consulta {
 		this.exames = exames;
 	}
 	
+	public void addExames(Exame ex) {
+		this.exames.add(ex);
+	}
+	
 	
 	public void realizarCons() {
 		DemaisFunc.maisCons();
+		medico.maisCons();
 		medico.addConsulta(this);
 		medico.somaValorCons(this.getValor());
-		paciente.addConsulta(this);
-		paciente.setDataUltCons(this.getDataHoraCons());
+		
+		if(pacCPlano==null) {
+			pacSPlano.addConsulta(this);
+			pacSPlano.setDataUltCons(this.getDataHoraCons());
+			pacSPlano.setValorUltCons(this.valor);
+		}
+		else {
+			pacCPlano.addConsulta(this);
+			pacCPlano.setDataUltCons(this.getDataHoraCons());
+		}
 		
 	}
+	
+	public void editarPront(String sintomas, String receita) {
+		this.setObsSintomas(sintomas);
+		this.setReceita(receita);
+	}
+
+	
+	public String mostrarDados() {
+		if(pacSPlano==null) {
+			return "\nConsulta" + "\nData e hora da Consulta: " + this.getStrDataHoraCons() + "\nPaciente: " + this.pacCPlano.getNome() + "\nPlano: " +this.pacCPlano.getNomePlano() +
+			"\nMedico " + this.medico.getNome()+ "\nValor: " + this.getValor() + "\nSintomas: " + this.getObsSintomas()+ "\nReceita: " + this.getReceita() + "\nMedicamentos: " + this.getMedicamentos()
+			+ "\nExames: " + this.exames.toString();
+			
+			
+		}
+		else {
+			return "\nConsulta" + "\nData e hora da Consulta: " + this.getStrDataHoraCons() + "\nPaciente: " + this.pacSPlano.getNome() + "\nMedico " + this.medico.getNome()+
+					"\nValor: " + this.getValor() + "\nSintomas: " + this.getObsSintomas()+ "\nReceita: " + this.getReceita() + "\nMedicamentos: " + this.getMedicamentos() +
+					"\nExames: " + this.exames.toString();
+		}
+	}
+	
+	
 	
 	
 }
