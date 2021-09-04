@@ -19,6 +19,13 @@ public class Exame {
 			return false;
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "Exame:" + this.getNome();
+	}
+	
+	
 	
 	
 }
