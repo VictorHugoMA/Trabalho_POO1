@@ -123,16 +123,28 @@ public class Consulta {
 		return pacCPlano;
 	}
 
-	public void setPacCPlano(PacCPlano pacCPlano) {
-		this.pacCPlano = pacCPlano;
+	public boolean setPacCPlano(PacCPlano pacCPlano) {
+		if(this.pacSPlano==null) {
+			this.pacCPlano = pacCPlano;
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	public PacSPlano getPacSPlano() {
 		return pacSPlano;
 	}
 
-	public void setPacSPlano(PacSPlano pacSPlano) {
-		this.pacSPlano = pacSPlano;
+	public boolean setPacSPlano(PacSPlano pacSPlano) {
+		if(this.pacCPlano==null) {
+			this.pacSPlano = pacSPlano;
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	public ArrayList<Exame> getExames() {
