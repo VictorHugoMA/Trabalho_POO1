@@ -11,7 +11,7 @@ public class Main {
 		DemaisFunc dm1 = new DemaisFunc("Jorge", "Recepcionista");
 		PacCPlano pacC = new PacCPlano("Daniel", "88858413687", ps);
 		PacCPlano pacC2 = new PacCPlano("Victor", "15635558674", "120", "Solteiro", end, "Masc", "20/11/2001", ps, 12011, "10/05/2012", false);
-		PacSPlano pacS = new PacSPlano("Davi", "73385255600");		
+		PacSPlano pacS = new PacSPlano("Davi", "73385255600", end, "10/10/2002");		
 		Consulta c1 = new Consulta(m1 ,pacC);
 		Consulta c2 = new Consulta(m1 ,pacS);
 		
@@ -20,6 +20,10 @@ public class Main {
 		
 		medicamentos.add("Dorflex");
 		exames.add(ex1);
+		
+		m1.setCpf("73385255600");
+		m1.setEndereco(end);
+		m1.addPlanosAtend(ps);
 		
 		
 		System.out.print("Teste CPF: ");
@@ -58,7 +62,9 @@ public class Main {
 		
 		
 		System.out.println(pacC2.mostraDados());
-		
+		System.out.println(pacS.mostraDados());
+		System.out.println(m1.mostraDados());	
+				
 		
 		System.out.println(c1.mostrarDados());
 		System.out.println(c2.mostrarDados());
