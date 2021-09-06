@@ -75,8 +75,11 @@ public class PlanoSaude {
 			return false;
 		}
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return this.getNome() + " com valor de consulta R$ " + this.getValorCons();
+	}
 	
 	
 }
