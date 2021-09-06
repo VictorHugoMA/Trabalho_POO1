@@ -104,5 +104,9 @@ public class Endereco {
 		}
 	}
 	
+	public String mostraDados() {
+		return "\nEndereco: Rua " + this.getRua() + " " + this.getNum();
+	}
+	
 	
 }

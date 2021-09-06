@@ -27,6 +27,7 @@ public abstract class Funcionario extends Pessoa{
 		
 	}
 	
+	public abstract float calcSalario();
 	
 	
 	public Date getDataAdmi() {
@@ -92,7 +93,11 @@ public abstract class Funcionario extends Pessoa{
 	}
 	
 	
-	public abstract float calcSalario();
+	public String mostraDados() {
+		return "\nFuncionario: " + super.mostraDados() + "\nNumero na carteira de Trabalho: " + this.getNumCartTrab() + "\nData de admissao: "+ 
+				this.getStrDataAdmi();
+	}
+	
 	
 	
 }

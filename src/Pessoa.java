@@ -111,6 +111,10 @@ public class Pessoa {
 		this.endereco = endereco;
 	}
 	
+	public String mostraDados() {
+		return this.getNome() + "\nCPF: " + this.getCpf() + "\nRG: " + this.getRg() + "\nEstado Civil: " + this.getEstadoCivil() + endereco.mostraDados();
+	}
+	
 	
 	
 	

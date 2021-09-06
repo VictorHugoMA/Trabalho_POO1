@@ -116,6 +116,14 @@ public class DemaisFunc extends Funcionario {
 		DemaisFunc.setNumConsTot(getNumConsTot()+1);
 	}
 	
+	public String mostraDados() {
+		return super.mostraDados() + "\nCargo: " + this.getCargo() + "\nSalario base R$ " + this.getSalarioBase();
+	}
+	
+	public static String mostraDadosDF() {
+		return  "\nNumero de consultas totais: " + DemaisFunc.getNumConsTot() + "\nNumero limite de consultas: " + DemaisFunc.getLimite() +
+				"\nValor de gratificacao R$ " + DemaisFunc.valorGrat;
+	}
 	
 	
 

@@ -113,9 +113,8 @@ public abstract class Paciente extends Pessoa {
 	}
 
 	
-	public String mostraDados() { //falta endereco
-		return 	"\nPaciente: " + this.getNome() + "\nCPF: " + this.getCpf() + "\nRG: " + this.getRg() + "\nEstado Civil: " + this.getEstadoCivil() + 
-				"\nSexo: " + this.getSexo() + "\nData de Nascimento: " + this.getStrDataNasc();
+	public String mostraDados() {
+		return 	"\nPaciente: " + super.mostraDados()+ "\nSexo: " + this.getSexo() + "\nData de Nascimento: " + this.getStrDataNasc();
 		
 	}
 
