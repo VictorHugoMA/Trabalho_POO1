@@ -1,4 +1,5 @@
 import java.text.ParseException;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -13,6 +14,12 @@ public class Main {
 		PacSPlano pacS = new PacSPlano("Davi", "73385255600");		
 		Consulta c1 = new Consulta(m1 ,pacC);
 		Consulta c2 = new Consulta(m1 ,pacS);
+		
+		ArrayList<String> medicamentos = new ArrayList<>();
+		ArrayList<Exame> exames= new ArrayList<>();
+		
+		medicamentos.add("Dorflex");
+		exames.add(ex1);
 		
 		
 		System.out.print("Teste CPF: ");
@@ -38,16 +45,14 @@ public class Main {
 		
 		c1.setStrDataHoraCons("02/09/2021 15:30");
 		c1.setFuncMarc(dm1);
-		c1.realizarCons();
-		c1.editarPront("Dor de cabeca", "Repouso e medicamento");
-		c1.addMedicamentos("Dorflex");
+		c1.realizarConsComPront("Dor de cabeca", "Repouso e medicamento", medicamentos, exames);
 		c1.addMedicamentos("Novalgina");
-		c1.addExames(ex1);
 		
 		c2.setStrDataHoraCons("04/09/2021 10:30");
 		c1.setFuncMarc(dm1);
 		c2.realizarCons();
-		c2.editarPront("Dor no dente", "Medicamento");
+		c2.setObsSintomas("Dor no dente");
+		c2.setReceita("Medicamento");
 		c2.addMedicamentos("Dipirona");
 		c2.addExames(ex1);
 		
