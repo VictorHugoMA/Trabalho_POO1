@@ -8,17 +8,17 @@ public class Main {
 		Exame ex1 = new Exame("Ressonancia");
 		Medico m1 = new Medico("Rafael", 200f);
 		DemaisFunc dm1 = new DemaisFunc("Jorge", "Recepcionista");
-		Paciente pac2 = new Paciente("Victor", "15635558674", "120", "Solteiro", end, "Masc", "20/11/2001");
 		PacCPlano pacC = new PacCPlano("Daniel", "88858413687", ps);
+		PacCPlano pacC2 = new PacCPlano("Victor", "15635558674", "120", "Solteiro", end, "Masc", "20/11/2001", ps, 12011, "10/05/2012", false);
 		PacSPlano pacS = new PacSPlano("Davi", "73385255600");		
 		Consulta c1 = new Consulta(m1 ,pacC);
 		Consulta c2 = new Consulta(m1 ,pacS);
 		
 		
 		System.out.print("Teste CPF: ");
-		if(pac2.setCpf("15635558674")) {
+		if(pacC2.setCpf("15635558674")) {
 			System.out.println("Valido");
-			System.out.println(pac2.getCpf());
+			System.out.println(pacC2.getCpf());
 			
 		}
 		else {
@@ -52,7 +52,7 @@ public class Main {
 		c2.addExames(ex1);
 		
 		
-		System.out.println(pac2.mostraDados());
+		System.out.println(pacC2.mostraDados());
 		
 		
 		System.out.println(c1.mostrarDados());
