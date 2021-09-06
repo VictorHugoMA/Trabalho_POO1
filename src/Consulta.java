@@ -177,10 +177,31 @@ public class Consulta {
 		}
 		
 	}
+	public void realizarConsComPront(String sintomas, String receita, ArrayList<String> med, ArrayList<Exame> ex) {
+		DemaisFunc.maisCons();
+		medico.maisCons();
+		medico.addConsulta(this);
+		medico.somaValorCons(this.getValor());
+		
+		this.editarPront(sintomas, receita, med, ex);
+		
+		if(pacCPlano==null) {
+			pacSPlano.addConsulta(this);
+			pacSPlano.setDataUltCons(this.getDataHoraCons());
+			pacSPlano.setValorUltCons(this.valor);
+		}
+		else {
+			pacCPlano.addConsulta(this);
+			pacCPlano.setDataUltCons(this.getDataHoraCons());
+		}
+		
+	}
 	
-	public void editarPront(String sintomas, String receita) {
+	public void editarPront(String sintomas, String receita, ArrayList<String> med, ArrayList<Exame> ex) {
 		this.setObsSintomas(sintomas);
 		this.setReceita(receita);
+		this.setMedicamentos(med);
+		this.setExames(ex);
 	}
 
 	
