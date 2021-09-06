@@ -3,7 +3,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Paciente extends Pessoa {
+public abstract class Paciente extends Pessoa {
 	private String sexo;
 	private Date dataNasc, dataCad, dataUltCons;
 	private ArrayList<Consulta> consulta = new ArrayList<>();
@@ -115,7 +115,7 @@ public class Paciente extends Pessoa {
 	
 	public String mostraDados() { //falta endereco
 		return 	"\nPaciente: " + this.getNome() + "\nCPF: " + this.getCpf() + "\nRG: " + this.getRg() + "\nEstado Civil: " + this.getEstadoCivil() + 
-				"\nSexo: " + this.getSexo() + "\nData de Nascimento: " + this.getDataNasc();
+				"\nSexo: " + this.getSexo() + "\nData de Nascimento: " + this.getStrDataNasc();
 		
 	}
 
