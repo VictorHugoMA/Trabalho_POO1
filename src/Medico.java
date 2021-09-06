@@ -156,11 +156,10 @@ public class Medico extends Funcionario{
 	}
 
 
-	@Override
-	public String toString() {
-		return "Medico [crm=" + crm + ", numConsRealiz=" + numConsRealiz + ", somaConsMes=" + somaConsMes
-				+ ", especialidades=" + especialidades + ", planosAtend=" + planosAtend + ", consulta=" + consulta
-				+ "]";
+	public String mostraDados() {
+		return 	super.mostraDados() + "\nCargo: Medico" + "\nCRM: " + this.getCrm() + "\nNumero de consultas realizadas: " + this.getNumConsRealiz() +
+				"\nEspecialidades: " +this.getEspecialidades() + "\nPlanos de saude atendidos: " + planosAtend.toString()+
+				"\nValor consulta sem plano: " + this.getValorSPlano();
 	}
 	
 	
