@@ -1,4 +1,4 @@
-
+import java.text.ParseException;
 
 public class PacSPlano extends Paciente {
 	private boolean descEsp;
@@ -11,9 +11,10 @@ public class PacSPlano extends Paciente {
 		this.setValorUltCons(valorUltCons);
 	}
 
-	public PacSPlano(boolean descEsp, float valorUltCons) {
-		this.setDescEsp(descEsp);
-		this.setValorUltCons(valorUltCons);
+	public PacSPlano(String nome, String cpf, Endereco endereco, String dataNasc) throws ParseException {
+		super(nome, cpf);
+		this.setEndereco(endereco);
+		this.setStrDataNasc(dataNasc);
 	}
 	
 	public PacSPlano(String nome, String cpf) {
@@ -44,6 +45,11 @@ public class PacSPlano extends Paciente {
 		else {
 			return false;
 		}
+	}
+	
+	
+	public String mostraDados() {
+		return super.mostraDados() + "\nDesconto especial: " + this.getDescEsp() + "\nValor da ultima consulta: " + this.getValorUltCons();
 	}
 
 }
