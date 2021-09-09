@@ -1,3 +1,4 @@
+package clinica;
 import java.text.ParseException;
 import java.util.ArrayList;
 
@@ -77,8 +78,7 @@ public class Main {
 		
 		System.out.println("\nSalario do Funcionario "+ dm1.getNome()+ " (" + dm1.getCargo()+"): "+ dm1.calcSalario());
 		
-		
-		
+		System.out.println(pacC2.geraRecibo());
 		
 		
 	}

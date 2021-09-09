@@ -1,3 +1,4 @@
+package clinica;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -30,6 +31,9 @@ public abstract class Paciente extends Pessoa {
 	public Paciente() {
 		
 	}
+	
+	public abstract String geraRecibo(); //metodo abstrato que quando implementadados nas subclasses vai gerar o recibo para o paciente
+	
 	
 	
 	public String getSexo() {
