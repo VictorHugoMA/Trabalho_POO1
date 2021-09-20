@@ -2,6 +2,8 @@ package clinica;
 import java.text.ParseException;
 import java.util.ArrayList;
 
+import dados.DadosPacientes;
+
 public class Main {
 
 	public static void main(String[] args) throws ParseException {
@@ -81,6 +83,11 @@ public class Main {
 		System.out.println(pacC2.geraRecibo());
 		
 		
+		
+		System.out.print("\n\nClasse dados:");
+		DadosPacientes dp = new DadosPacientes();
+		dp.cadastrar(pacC2);
+		dp.listar();
 	}
 
 }
