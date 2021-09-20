@@ -4,15 +4,39 @@ import clinica.*;
 
 
 public class DadosFuncionarios {
-	private ArrayList<Medico> vetMed = new ArrayList<>();
-	private ArrayList<DemaisFunc> vetDemaisF = new ArrayList<>();
+	private ArrayList<Funcionario> vetFunc = new ArrayList<>();
 	
-	public void cadastrarMed(Medico m) {
-		this.vetMed.add(m);
+	public void cadastrarFuncionario(Funcionario func) {
+		this.vetFunc.add(func);
 	}
 	
-	public void cadastrarDF(DemaisFunc dm) {
-		this.vetDemaisF.add(dm);
+	public void listar() {
+		for(Funcionario f: this.vetFunc) {
+			System.out.println(f.mostraDados());
+		}
+	}
+	
+	public Funcionario buscar(String cpf) {
+		Funcionario c = null;
+		
+		for(Funcionario f: this.vetFunc) {
+			if(f.getCpf().equals(cpf)) {
+				c = f;
+				break;
+			}
+		}
+		return c;
+	}
+	
+	public boolean excluir(String cpf) {
+		Funcionario c = this.buscar(cpf);
+		if(c!=null) {
+			//this.vetFunc.remove(c);
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 }

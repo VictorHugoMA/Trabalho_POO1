@@ -4,15 +4,42 @@ import clinica.*;
 import java.util.ArrayList;
 
 public class DadosPacientes {
-	private ArrayList<PacCPlano> vetPacC = new ArrayList<>();
-	private ArrayList<PacSPlano> vetPacS = new ArrayList<>();
+	private ArrayList<Paciente> vetPac = new ArrayList<>();
 	
-	public void cadastrarPC(PacCPlano pc) {
-		this.vetPacC.add(pc);
+	public void cadastrar(PacCPlano pc) {
+		this.vetPac.add(pc);
+	}
+	public void cadastrar(PacSPlano ps) {
+		this.vetPac.add(ps);
 	}
 	
-	public void cadastrarPS(PacSPlano ps) {
-		this.vetPacS.add(ps);
+	public void listar() {
+		for(Paciente p: this.vetPac) {
+			System.out.println(p.mostraDados());
+		}
+	}
+	
+	public Paciente buscar(String cpf) {
+		Paciente c = null;
+		
+		for(Paciente p: this.vetPac) {
+			if(p.getCpf().equals(cpf)) {
+				c = p;
+				break;
+			}
+		}
+		return c;
+	}
+	
+	public boolean excluir(String cpf) {
+		Paciente c = this.buscar(cpf);
+		if(c!=null) {
+			//this.vetPac.remove(c);
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	
