@@ -1,6 +1,6 @@
 package clinica;
 
-public class Endereco {
+public class Endereco implements Mostrar {
 	private String rua;
 	private int num;
 	private String compl, bairro, cidade;
@@ -105,7 +105,7 @@ public class Endereco {
 		}
 	}
 	
-	public String mostraDados() {
+	public String mostrarDados() {
 		return "\nEndereco: Rua " + this.getRua() + " " + this.getNum();
 	}
 	

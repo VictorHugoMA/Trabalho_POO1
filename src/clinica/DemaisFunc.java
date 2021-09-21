@@ -116,8 +116,8 @@ public class DemaisFunc extends Funcionario {
 		DemaisFunc.setNumConsTot(getNumConsTot()+1);
 	}
 	
-	public String mostraDados() {
-		return super.mostraDados() + "\nCargo: " + this.getCargo() + "\nSalario base R$ " + this.getSalarioBase();
+	public String mostrarDados() {
+		return super.mostrarDados() + "\nCargo: " + this.getCargo() + "\nSalario base R$ " + this.getSalarioBase();
 	}
 	
 	public static String mostraDadosDF() {

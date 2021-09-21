@@ -3,7 +3,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public abstract class Funcionario extends Pessoa{
+public abstract class Funcionario extends Pessoa {
 	private Date dataAdmi;
 	private int numCartTrab;
 	private String usuario, senha;
@@ -94,8 +94,8 @@ public abstract class Funcionario extends Pessoa{
 	}
 	
 	
-	public String mostraDados() {
-		return "\nFuncionario: " + super.mostraDados() + "\nNumero na carteira de Trabalho: " + this.getNumCartTrab() + "\nData de admissao: "+ 
+	public String mostrarDados() {
+		return "\nFuncionario: " + super.mostrarDados() + "\nNumero na carteira de Trabalho: " + this.getNumCartTrab() + "\nData de admissao: "+ 
 				this.getStrDataAdmi();
 	}
 	

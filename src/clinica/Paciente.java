@@ -117,8 +117,8 @@ public abstract class Paciente extends Pessoa {
 	}
 
 	
-	public String mostraDados() {
-		return 	"\nPaciente: " + super.mostraDados()+ "\nSexo: " + this.getSexo() + "\nData de Nascimento: " + this.getStrDataNasc();
+	public String mostrarDados() {
+		return 	"\nPaciente: " + super.mostrarDados()+ "\nSexo: " + this.getSexo() + "\nData de Nascimento: " + this.getStrDataNasc();
 		
 	}
 

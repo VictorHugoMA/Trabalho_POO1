@@ -157,8 +157,8 @@ public class Medico extends Funcionario{
 	}
 
 
-	public String mostraDados() {
-		return 	super.mostraDados() + "\nCargo: Medico" + "\nCRM: " + this.getCrm() + "\nNumero de consultas realizadas: " + this.getNumConsRealiz() +
+	public String mostrarDados() {
+		return 	super.mostrarDados() + "\nCargo: Medico" + "\nCRM: " + this.getCrm() + "\nNumero de consultas realizadas: " + this.getNumConsRealiz() +
 				"\nEspecialidades: " +this.getEspecialidades() + "\nPlanos de saude atendidos: " + planosAtend.toString()+
 				"\nValor consulta sem plano: " + this.getValorSPlano();
 	}

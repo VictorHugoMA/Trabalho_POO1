@@ -60,8 +60,8 @@ public class PacSPlano extends Paciente {
 	}
 	
 	
-	public String mostraDados() {
-		return super.mostraDados() + "\nDesconto especial: " + this.getDescEsp() + "\nValor da ultima consulta: " + this.getValorUltCons();
+	public String mostrarDados() {
+		return super.mostrarDados() + "\nDesconto especial: " + this.getDescEsp() + "\nValor da ultima consulta: " + this.getValorUltCons();
 	}
 
 }

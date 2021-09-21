@@ -1,6 +1,6 @@
 package clinica;
 
-public class Pessoa {
+public class Pessoa implements Mostrar {
 	private String nome;
 	private String cpf, rg;
 	private byte estadoCivil;
@@ -111,13 +111,9 @@ public class Pessoa {
 		this.endereco = endereco;
 	}
 	
-	public String mostraDados() {
-		return this.getNome() + "\nCPF: " + this.getCpf() + "\nRG: " + this.getRg() + "\nEstado Civil: " + this.getEstadoCivil() + endereco.mostraDados();
+	public String mostrarDados() {
+		return this.getNome() + "\nCPF: " + this.getCpf() + "\nRG: " + this.getRg() + "\nEstado Civil: " + this.getEstadoCivil() + endereco.mostrarDados();
 	}
-	
-	
-	
-	
 	
 	
 }

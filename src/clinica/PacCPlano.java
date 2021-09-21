@@ -120,8 +120,8 @@ public class PacCPlano extends Paciente{
 	}
 
 	
-	public String mostraDados() {
-		return super.mostraDados() + "\nPlano: " + plano.getNome() + "\nNumero da carteirinha: " + this.getNumCarteirinha() +
+	public String mostrarDados() {
+		return super.mostrarDados() + "\nPlano: " + plano.getNome() + "\nNumero da carteirinha: " + this.getNumCarteirinha() +
 				"\nData de ingresso no plano: " + this.getStrDataIngPlano() + "\nCarencia: " + this.isCarencia();
 	}
 
