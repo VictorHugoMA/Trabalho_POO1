@@ -16,14 +16,59 @@ public class DadosConsulta {
 		}
 	}
 	
-	//alterar parametro
-	public Consulta buscar() {
-		Consulta a = null;
-		return a;
+	public ArrayList<Consulta> buscarPorMed(String cpf) {
+		ArrayList<Consulta> c = new ArrayList<>();
+		
+		for(Consulta p: this.vetCons) {
+			if(p.getMedico().getCpf().equals(ValidaCPF.imprimeCPF(cpf))) {
+				c.add(p);
+				break;
+			}
+		}
+		return c;
 	}
 	
-	//alterar parametro
-	public boolean excluir() {
-		return true;
+	public ArrayList<Consulta> buscarPorPac(String cpf) {
+		ArrayList<Consulta> c = new ArrayList<>();
+		
+		for(Consulta p: this.vetCons) {
+			if(p.getPacSPlano().getCpf().equals(ValidaCPF.imprimeCPF(cpf))) {
+				c.add(p);
+				break;
+			}
+			else if(p.getPacCPlano().getCpf().equals(ValidaCPF.imprimeCPF(cpf))) {
+				c.add(p);
+				break;
+			}
+			
+		}
+		return c;
 	}
+	
+	
+	public boolean excluirPorMed(String cpf) {
+		for(Consulta p: this.vetCons) {
+			if(p.getMedico().getCpf().equals(ValidaCPF.imprimeCPF(cpf))) {
+				this.vetCons.remove(p);				
+			}
+			return true;
+		}
+		return false;
+		
+	}
+	
+	public boolean excluirPorPac(String cpf) {
+		for(Consulta p: this.vetCons) {
+			if(p.getPacSPlano().getCpf().equals(ValidaCPF.imprimeCPF(cpf))) {
+				this.vetCons.remove(p);				
+			}
+			else if(p.getPacCPlano().getCpf().equals(ValidaCPF.imprimeCPF(cpf))) {
+				this.vetCons.remove(p);				
+			}
+			return true;
+		}
+		return false;
+		
+	}
+	
 }

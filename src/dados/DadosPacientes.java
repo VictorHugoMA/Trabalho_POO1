@@ -15,7 +15,7 @@ public class DadosPacientes {
 	
 	public void listar() {
 		for(Paciente p: this.vetPac) {
-			System.out.println(p.mostraDados());
+			System.out.println(p.mostrarDados());
 		}
 	}
 	
@@ -23,7 +23,7 @@ public class DadosPacientes {
 		Paciente c = null;
 		
 		for(Paciente p: this.vetPac) {
-			if(p.getCpf().equals(cpf)) {
+			if(p.getCpf().equals(ValidaCPF.imprimeCPF(cpf))) {
 				c = p;
 				break;
 			}
@@ -34,7 +34,7 @@ public class DadosPacientes {
 	public boolean excluir(String cpf) {
 		Paciente c = this.buscar(cpf);
 		if(c!=null) {
-			//this.vetPac.remove(c);
+			this.vetPac.remove(c);
 			return true;
 		}
 		else {

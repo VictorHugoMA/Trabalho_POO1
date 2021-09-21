@@ -12,7 +12,7 @@ public class DadosFuncionarios {
 	
 	public void listar() {
 		for(Funcionario f: this.vetFunc) {
-			System.out.println(f.mostraDados());
+			System.out.println(f.mostrarDados());
 		}
 	}
 	
@@ -20,7 +20,7 @@ public class DadosFuncionarios {
 		Funcionario c = null;
 		
 		for(Funcionario f: this.vetFunc) {
-			if(f.getCpf().equals(cpf)) {
+			if(f.getCpf().equals(ValidaCPF.imprimeCPF(cpf))) {
 				c = f;
 				break;
 			}
@@ -31,7 +31,7 @@ public class DadosFuncionarios {
 	public boolean excluir(String cpf) {
 		Funcionario c = this.buscar(cpf);
 		if(c!=null) {
-			//this.vetFunc.remove(c);
+			this.vetFunc.remove(c);
 			return true;
 		}
 		else {
