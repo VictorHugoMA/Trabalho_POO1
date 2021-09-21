@@ -1,8 +1,7 @@
 package clinica;
 import java.text.ParseException;
 import java.util.ArrayList;
-
-import dados.DadosPacientes;
+import dados.*;
 
 public class Main {
 
@@ -64,9 +63,9 @@ public class Main {
 		c2.addExames(ex1);
 		
 		
-		System.out.println(pacC2.mostraDados());
-		System.out.println(pacS.mostraDados());
-		System.out.println(m1.mostraDados());	
+		System.out.println(pacC2.mostrarDados());
+		System.out.println(pacS.mostrarDados());
+		System.out.println(m1.mostrarDados());	
 				
 		
 		System.out.println(c1.mostrarDados());
@@ -84,9 +83,37 @@ public class Main {
 		
 		
 		
-		System.out.print("\n\nClasse dados:");
+		System.out.println("\n\nClasse de dados");
+		System.out.println("\nListando Pacientes:");
 		DadosPacientes dp = new DadosPacientes();
 		dp.cadastrar(pacC2);
+		dp.cadastrar(pacS);
+		dp.listar();
+		
+		PacCPlano pacCTeste = new PacCPlano();
+		PacSPlano pacSTeste = new PacSPlano();
+		ArrayList lista = new ArrayList();
+		
+		System.out.println("\nBuscando um Paciente");
+		lista.add(dp.buscar("15635558674"));
+		
+		if(lista.get(0) instanceof PacCPlano) {
+			pacCTeste = (PacCPlano)lista.get(0);
+		}
+		else {
+			pacSTeste = (PacSPlano)lista.get(0);
+		}
+		
+			if(pacCTeste.getNome()!=null) {
+				System.out.println(pacCTeste.mostrarDados());					
+			}
+			
+			if(pacSTeste.getNome()!=null) {
+				System.out.println(pacSTeste.mostrarDados());			
+			}
+			
+		System.out.println("\nExcluindo um paciente");
+		dp.excluir("15635558674");
 		dp.listar();
 	}
 
