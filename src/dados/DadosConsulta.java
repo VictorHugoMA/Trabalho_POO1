@@ -6,7 +6,7 @@ import clinica.*;
 public class DadosConsulta {
 	private ArrayList<Consulta> vetCons = new ArrayList<>();
 	
-	public void cadastrarCons(Consulta c) {
+	public void cadastrar(Consulta c) {
 		this.vetCons.add(c);
 	}
 	

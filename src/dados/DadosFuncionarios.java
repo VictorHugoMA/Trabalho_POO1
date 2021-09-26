@@ -6,7 +6,7 @@ import clinica.*;
 public class DadosFuncionarios {
 	private ArrayList<Funcionario> vetFunc = new ArrayList<>();
 	
-	public void cadastrarFuncionario(Funcionario func) {
+	public void cadastrar(Funcionario func) {
 		this.vetFunc.add(func);
 	}
 	
