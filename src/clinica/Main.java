@@ -91,17 +91,16 @@ public class Main {
 		dp.listar();
 		
 		PacCPlano pacCTeste = new PacCPlano();
-		PacSPlano pacSTeste = new PacSPlano();
-		ArrayList lista = new ArrayList();
+		PacSPlano pacSTeste = new PacSPlano(); 
 		
 		System.out.println("\nBuscando um Paciente");
-		lista.add(dp.buscar("15635558674"));
+		Paciente pBusca = dp.buscar("15635558674");
 		
-		if(lista.get(0) instanceof PacCPlano) {
-			pacCTeste = (PacCPlano)lista.get(0);
+		if(pBusca instanceof PacCPlano) {
+			pacCTeste = (PacCPlano)pBusca;
 		}
 		else {
-			pacSTeste = (PacSPlano)lista.get(0);
+			pacSTeste = (PacSPlano)pBusca;
 		}
 		
 			if(pacCTeste.getNome()!=null) {
