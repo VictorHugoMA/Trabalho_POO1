@@ -1,15 +1,14 @@
 package dados;
 import clinica.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class DadosPacientes {
+public class DadosPacientes implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private ArrayList<Paciente> vetPac = new ArrayList<>();
 	
-	public void cadastrar(PacCPlano pc) {
-		this.vetPac.add(pc);
-	}
-	public void cadastrar(PacSPlano ps) {
+	public void cadastrar(Paciente ps) {
 		this.vetPac.add(ps);
 	}
 	

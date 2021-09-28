@@ -1,9 +1,12 @@
 package dados;
 
 import clinica.*;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class DadosEndereco {
+public class DadosEndereco implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private ArrayList<Endereco> vetEnd = new ArrayList<>();
 	
 	public void cadastrar(Endereco end) {

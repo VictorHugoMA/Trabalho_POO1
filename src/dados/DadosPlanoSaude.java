@@ -1,9 +1,11 @@
 package dados;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import clinica.*;
 
-public class DadosPlanoSaude {
+public class DadosPlanoSaude implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private ArrayList<PlanoSaude> vetPlan = new ArrayList<>();
 	
 	public void cadastrar(PlanoSaude plano) {

@@ -1,9 +1,11 @@
 package dados;
+import java.io.Serializable;
 import java.util.ArrayList;
 import clinica.*;
 
 
-public class DadosFuncionarios {
+public class DadosFuncionarios implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private ArrayList<Funcionario> vetFunc = new ArrayList<>();
 	
 	public void cadastrar(Funcionario func) {
