@@ -1,6 +1,9 @@
 package clinica;
 
-public class Exame {
+import java.io.Serializable;
+
+public class Exame implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private String nome;
 	
 	public Exame(String nome) {

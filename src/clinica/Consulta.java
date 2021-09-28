@@ -1,10 +1,12 @@
 package clinica;
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Consulta {
+public class Consulta implements Serializable {
+	private static final long serialVersionUID = 1L;
 	private Date dataHoraCons;
 	private ArrayList<String> medicamentos = new ArrayList<>();
 	private String obsSintomas;

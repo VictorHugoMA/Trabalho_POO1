@@ -2,6 +2,7 @@ package clinica;
 import java.util.ArrayList;
 
 public class Medico extends Funcionario{
+	private static final long serialVersionUID = 1L;
 	private int crm;
 	private int numConsRealiz;
 	private float somaConsMes;

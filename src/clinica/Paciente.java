@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public abstract class Paciente extends Pessoa {
+	private static final long serialVersionUID = 1L;
 	private String sexo;
 	private Date dataNasc, dataCad, dataUltCons;
 	private ArrayList<Consulta> consulta = new ArrayList<>();

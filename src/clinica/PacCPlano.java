@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class PacCPlano extends Paciente{
+	private static final long serialVersionUID = 1L;
 	private int numCarteirinha;
 	private Date dataIngPlano;
 	private boolean carencia;

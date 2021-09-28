@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public abstract class Funcionario extends Pessoa {
+	private static final long serialVersionUID = 1L;
 	private Date dataAdmi;
 	private int numCartTrab;
 	private String usuario, senha;

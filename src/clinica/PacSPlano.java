@@ -2,6 +2,7 @@ package clinica;
 import java.text.ParseException;
 
 public class PacSPlano extends Paciente {
+	private static final long serialVersionUID = 1L;
 	private boolean descEsp;
 	private float valorUltCons;
 	

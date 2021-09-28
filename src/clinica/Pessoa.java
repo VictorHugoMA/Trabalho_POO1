@@ -1,6 +1,9 @@
 package clinica;
 
-public class Pessoa implements Mostrar {
+import java.io.Serializable;
+
+public class Pessoa implements Mostrar, Serializable {
+	private static final long serialVersionUID = 1L;
 	private String nome;
 	private String cpf, rg;
 	private byte estadoCivil;

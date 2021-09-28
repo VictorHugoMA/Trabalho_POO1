@@ -1,6 +1,7 @@
 package clinica;
 
 public class DemaisFunc extends Funcionario {
+	private static final long serialVersionUID = 1L;
 	private float salarioBase;
 	private String cargo;
 	private static int numConsTot;

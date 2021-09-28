@@ -1,6 +1,9 @@
 package clinica;
 
-public class Endereco implements Mostrar {
+import java.io.Serializable;
+
+public class Endereco implements Mostrar, Serializable {
+	private static final long serialVersionUID = 1L;
 	private String rua;
 	private int num;
 	private String compl, bairro, cidade;
