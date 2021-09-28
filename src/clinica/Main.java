@@ -25,9 +25,11 @@ public class Main {
 		//Pacientes
 		PacCPlano pacC = new PacCPlano("Daniel", "88858413687", ps);
 		PacCPlano pacC2 = new PacCPlano("Victor", "15635558674", "120", "Solteiro", end, "Masc", "20/11/2001", ps, 12011, "10/05/2012", false);
+		PacCPlano pacC3 = new PacCPlano("Pedro", "02966058080", "111", "Solteiro", end, "Masc", "10/08/1998", ps, 11122, "05/10/2005", true);
 		PacSPlano pacS = new PacSPlano("Davi", "73385255600", end, "10/10/2002");
 		PacCPlano pacCTeste = new PacCPlano();
-		PacSPlano pacSTeste = new PacSPlano(); 
+		PacSPlano pacSTeste = new PacSPlano();
+		
 		
 		//Consultas
 		Consulta c1 = new Consulta(m1 ,pacC);
@@ -107,6 +109,7 @@ public class Main {
 		
 		dp.cadastrar(pacC2);
 		dp.cadastrar(pacS);
+		dp.cadastrar(pacC3);
 		dp.listar();
 		
 		System.out.println("\nBuscando um Paciente");
@@ -144,7 +147,7 @@ public class Main {
 		dl = (DadosPacientes)ArquivoIO.leituraObjeto("arquivo.arq");
 		if(dl!=null) {
 			System.out.println("Leitura realizada com sucesso");
-			dl.listar();			
+			dl.listar();		
 		}
 		else {
 			System.out.println("Falha na leitura");
