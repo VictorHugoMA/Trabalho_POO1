@@ -11,25 +11,31 @@ public abstract class ArquivoIO {
 			obj.writeObject(objD);
 			obj.flush();
 			obj.close();
+			arq.flush();
+			arq.close();
 			return true;
 		}
 		catch (Exception e) {
+			//System.out.println("ERRO: " +e.toString());
 			return false;
 		}
 	}
 	
 	public static Object leituraObjeto(String caminho) {
 		Object o = null;
+		FileInputStream arq = null;
+		ObjectInputStream obj = null;
 		try {
-			FileInputStream arq = new FileInputStream(caminho);
-			ObjectInputStream obj = new ObjectInputStream(arq);
+			arq = new FileInputStream(caminho);
+			obj = new ObjectInputStream(arq);
 			o = obj.readObject();
 			obj.close();
-			return o;
+			arq.close();
 		}
 		catch (Exception e) {
-			return o;
+			return null;
 		}
+		return o;
 		
 	}
 	
