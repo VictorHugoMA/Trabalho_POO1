@@ -10,22 +10,27 @@ public class Main {
 		//Instancias
 		
 		//Enderecos
-		Endereco end = new Endereco("Joao Naves", 1000);
+		Endereco end = new Endereco("Joao Naves", 1330);
+		Endereco end2 = new Endereco("Segismundo Pereira", 315);
+		Endereco end3 = new Endereco("Rondon Pacheco", 2000);
 		
 		//Planos de Saude
-		PlanoSaude ps = new PlanoSaude("Unimed", 150f);
+		PlanoSaude ps = new PlanoSaude("Unimed", 175f);
+		PlanoSaude ps2 = new PlanoSaude("Prevent Senior", 150f);
+		PlanoSaude ps3 = new PlanoSaude("Bradesco Saude", 190f);
 		
 		//Exames
 		Exame ex1 = new Exame("Ressonancia");
+		Exame ex2 = new Exame("Raio-X");
 		
 		//Funcionarios
 		Medico m1 = new Medico("Rafael", 200f);
 		DemaisFunc dm1 = new DemaisFunc("Jorge", "Recepcionista");
 		
 		//Pacientes
-		PacCPlano pacC = new PacCPlano("Daniel", "88858413687", ps);
-		PacCPlano pacC2 = new PacCPlano("Victor", "15635558674", "120", "Solteiro", end, "Masc", "20/11/2001", ps, 12011, "10/05/2012", false);
-		PacCPlano pacC3 = new PacCPlano("Pedro", "02966058080", "111", "Solteiro", end, "Masc", "10/08/1998", ps, 11122, "05/10/2005", true);
+		PacCPlano pacC = new PacCPlano("Daniel", "88858413687", ps3);
+		PacCPlano pacC2 = new PacCPlano("Victor", "15635558674", "120", "Solteiro", end3, "Masc", "20/11/2001", ps, 12011, "10/05/2012", false);
+		PacCPlano pacC3 = new PacCPlano("Pedro", "02966058080", "111", "Solteiro", end2, "Masc", "10/08/1998", ps2, 11122, "05/10/2005", true);
 		PacSPlano pacS = new PacSPlano("Davi", "73385255600", end, "10/10/2002");
 		PacCPlano pacCTeste = new PacCPlano();
 		PacSPlano pacSTeste = new PacSPlano();
@@ -41,10 +46,13 @@ public class Main {
 		
 		//ArrayList
 		ArrayList<String> medicamentos = new ArrayList<>();
+		ArrayList<String> especialidades= new ArrayList<>();
 		ArrayList<Exame> exames= new ArrayList<>();
 		
 		medicamentos.add("Dorflex");
+		especialidades.add("Infectologista");
 		exames.add(ex1);
+		exames.add(ex2);
 		
 		//Testes:
 		
@@ -62,8 +70,9 @@ public class Main {
 		m1.setCpf("73385255600");
 		m1.setEndereco(end);
 		m1.addPlanosAtend(ps);
-		m1.setStrDataAdmi("11/09/2020");
-		System.out.println("\nData Admissao do Medico " + m1.getNome()+": " + m1.getStrDataAdmi());
+		m1.addPlanosAtend(ps3);
+		m1.setEspecialidades(especialidades);
+		m1.setStrDataAdmi("11/09/2015");
 		
 		//Demais Funcionarios
 		DemaisFunc.setLimite(1);
@@ -88,6 +97,7 @@ public class Main {
 		System.out.println(pacC2.mostrarDados());
 		System.out.println(pacS.mostrarDados());
 		System.out.println(m1.mostrarDados());	
+		System.out.println("Data Admissao do Medico: " + m1.getStrDataAdmi());
 				
 		System.out.println(c1.mostrarDados());
 		System.out.println(c2.mostrarDados());
