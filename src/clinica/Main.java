@@ -146,7 +146,7 @@ public class Main {
 		
 		
 		//Escrita de arquivo
-		if(ArquivoIO.escritaObjeto(dp, "arquivo.arq")) {
+		if(dp.gravarBin()) {
 			System.out.println("\nEscrita feira com sucesso");
 		}
 		else {
@@ -154,7 +154,7 @@ public class Main {
 		}
 		
 		//Leitura de arquivo
-		dl = (DadosPacientes)ArquivoIO.leituraObjeto("arquivo.arq");
+		dl = DadosPacientes.recuperarBin();
 		if(dl!=null) {
 			System.out.println("Leitura realizada com sucesso");
 			dl.listar();		
