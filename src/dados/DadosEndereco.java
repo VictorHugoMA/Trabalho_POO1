@@ -5,7 +5,7 @@ import clinica.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class DadosEndereco implements Serializable{
+public class DadosEndereco implements Serializable, GravarBinario{
 	private static final long serialVersionUID = 1L;
 	private ArrayList<Endereco> vetEnd = new ArrayList<>();
 	
@@ -40,5 +40,19 @@ public class DadosEndereco implements Serializable{
 		else {
 			return false;
 		}
+	}
+	
+	public boolean gravarBin() {
+		if(ArquivoIO.escritaObjeto(this, "enderecoBin.arq")) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public static DadosEndereco recuperarBin() {
+		return (DadosEndereco)ArquivoIO.leituraObjeto("enderecoBin.arq");
+
 	}
 }

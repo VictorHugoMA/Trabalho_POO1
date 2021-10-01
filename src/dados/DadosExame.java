@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import clinica.*;
 
-public class DadosExame implements Serializable{
+public class DadosExame implements Serializable, GravarBinario{
 	private static final long serialVersionUID = 1L;
 	private ArrayList<Exame> vetExa = new ArrayList<>();
 	
@@ -39,5 +39,19 @@ public class DadosExame implements Serializable{
 		else {
 			return false;
 		}
+	}
+	
+	public boolean gravarBin() {
+		if(ArquivoIO.escritaObjeto(this, "exameBin.arq")) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public static DadosExame recuperarBin() {
+		return (DadosExame)ArquivoIO.leituraObjeto("exameBin.arq");
+
 	}
 }

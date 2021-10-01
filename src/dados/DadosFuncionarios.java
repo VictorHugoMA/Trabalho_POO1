@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import clinica.*;
 
 
-public class DadosFuncionarios implements Serializable{
+public class DadosFuncionarios implements Serializable, GravarBinario{
 	private static final long serialVersionUID = 1L;
 	private ArrayList<Funcionario> vetFunc = new ArrayList<>();
 	
@@ -39,6 +39,20 @@ public class DadosFuncionarios implements Serializable{
 		else {
 			return false;
 		}
+	}
+	
+	public boolean gravarBin() {
+		if(ArquivoIO.escritaObjeto(this, "funcionarioBin.arq")) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public static DadosFuncionarios recuperarBin() {
+		return (DadosFuncionarios)ArquivoIO.leituraObjeto("funcionarioBin.arq");
+
 	}
 	
 }
