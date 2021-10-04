@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import clinica.*;
 
-public class DadosExame implements Serializable, GravarBinario{
+public class DadosExame implements Serializable, Dados{
 	private static final long serialVersionUID = 1L;
 	private ArrayList<Exame> vetExa = new ArrayList<>();
 	

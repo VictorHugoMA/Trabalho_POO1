@@ -5,7 +5,7 @@ import clinica.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class DadosEndereco implements Serializable, GravarBinario{
+public class DadosEndereco implements Serializable, Dados{
 	private static final long serialVersionUID = 1L;
 	private ArrayList<Endereco> vetEnd = new ArrayList<>();
 	
