@@ -18,10 +18,14 @@ public class Endereco implements Mostrar, Serializable {
 		this.setCidade(cidade);
 		this.setCep(cep);
 	}
-	
+
 	public Endereco(String rua, int num) {
 		this.setRua(rua);
 		this.setNum(num);
+	}
+	
+	public Endereco() {
+		
 	}
 	
 
