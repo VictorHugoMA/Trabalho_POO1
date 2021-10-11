@@ -40,9 +40,6 @@ public class Main {
 		Consulta c1 = new Consulta(m1 ,pacC);
 		Consulta c2 = new Consulta(m1 ,pacS);
 		
-		//Classe de Dados
-		DadosPacientes dp = new DadosPacientes();
-		DadosPacientes dl = new DadosPacientes();
 		
 		//ArrayList
 		ArrayList<String> medicamentos = new ArrayList<>();
@@ -117,13 +114,13 @@ public class Main {
 		System.out.println("\n\nClasse de dados");
 		System.out.println("\nListando Pacientes:");
 		
-		dp.cadastrar(pacC2);
-		dp.cadastrar(pacS);
-		dp.cadastrar(pacC3);
-		dp.listar();
+		DadosPacientes.cadastrar(pacC2);
+		DadosPacientes.cadastrar(pacS);
+		DadosPacientes.cadastrar(pacC3);
+		DadosPacientes.listar();
 		
 		System.out.println("\nBuscando um Paciente");
-		Paciente pBusca = dp.buscar("15635558674");
+		Paciente pBusca = DadosPacientes.buscar("15635558674");
 		
 		if(pBusca instanceof PacCPlano) {
 			pacCTeste = (PacCPlano)pBusca;
@@ -141,26 +138,16 @@ public class Main {
 			}
 			
 		System.out.println("\nExcluindo um paciente");
-		dp.excluir("15635558674");
-		dp.listar();
+		DadosPacientes.excluir("15635558674");
+		DadosPacientes.listar();
 		
 		
 		//Escrita de arquivo
-		if(dp.gravarBin()) {
+		if(DadosPacientes.gravarBin()) {
 			System.out.println("\nEscrita feira com sucesso");
 		}
 		else {
 			System.out.println("\nFalha na escrita");
-		}
-		
-		//Leitura de arquivo
-		dl = DadosPacientes.recuperarBin();
-		if(dl!=null) {
-			System.out.println("Leitura realizada com sucesso");
-			dl.listar();		
-		}
-		else {
-			System.out.println("Falha na leitura");
 		}
 		
 		
