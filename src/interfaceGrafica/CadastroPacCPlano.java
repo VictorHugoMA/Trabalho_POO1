@@ -31,7 +31,7 @@ public class CadastroPacCPlano extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					CadastroPacSPlano frame = new CadastroPacSPlano();
+					CadastroPacCPlano frame = new CadastroPacCPlano();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -79,28 +79,6 @@ public class CadastroPacCPlano extends JFrame {
 		getContentPane().add(textFieldRg);
 		textFieldRg.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Enviar");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String nome = textFieldNome.getText();
-				PacCPlano p = new PacCPlano();
-				p.setNome(nome);
-				p.setCpf(textFieldCpf.getText());
-				p.setRg(textFieldRg.getText());
-				p.setEstadoCivil(textFieldEstCivil.getText());
-				p.setSexo(textFieldSexo.getText());
-				try {
-					p.setStrDataNasc(textFieldDatNasc.getText());
-				} catch (ParseException e1) {
-					
-				}
-				//Endereco
-				//Plano
-				
-			}
-		});
-		btnNewButton.setBounds(312, 384, 89, 23);
-		getContentPane().add(btnNewButton);
 		
 		JLabel lblNewLabel_4 = new JLabel("Est. Civil:");
 		lblNewLabel_4.setBounds(10, 128, 51, 14);
@@ -111,9 +89,6 @@ public class CadastroPacCPlano extends JFrame {
 		getContentPane().add(textFieldEstCivil);
 		textFieldEstCivil.setColumns(10);
 		
-		JButton btnNewButton_1 = new JButton("Voltar");
-		btnNewButton_1.setBounds(213, 384, 89, 23);
-		getContentPane().add(btnNewButton_1);
 		
 		JLabel lblNewLabel_5 = new JLabel("Sexo:");
 		lblNewLabel_5.setBounds(10, 153, 46, 14);
@@ -221,7 +196,41 @@ public class CadastroPacCPlano extends JFrame {
 		getContentPane().add(textField);
 		textField.setColumns(10);
 		
+		JButton botaoVoltar = new JButton("Voltar");
+		botaoVoltar.setBounds(213, 384, 89, 23);
+		getContentPane().add(botaoVoltar);
+		botaoVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Voltar", "Teste", JOptionPane.INFORMATION_MESSAGE);
+				
+			}
+		});
+		
+		JButton botaoEnviar = new JButton("Enviar");
+		botaoEnviar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String nome = textFieldNome.getText();
+				PacCPlano p = new PacCPlano();
+				p.setNome(nome);
+				p.setCpf(textFieldCpf.getText());
+				p.setRg(textFieldRg.getText());
+				p.setEstadoCivil(textFieldEstCivil.getText());
+				p.setSexo(textFieldSexo.getText());
+				try {
+					p.setStrDataNasc(textFieldDatNasc.getText());
+				} catch (ParseException e1) {
+					
+				}
+				JOptionPane.showMessageDialog(null, "Cadastrado", "Cadastro", JOptionPane.INFORMATION_MESSAGE);
+				//Endereco
+				//Plano
+				
+			}
+		});
+		botaoEnviar.setBounds(312, 384, 89, 23);
+		getContentPane().add(botaoEnviar);
 		
 		
 	}
+
 }
