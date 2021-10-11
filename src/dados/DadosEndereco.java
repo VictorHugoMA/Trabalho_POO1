@@ -5,24 +5,24 @@ import clinica.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class DadosEndereco implements Serializable, Dados{
+public class DadosEndereco implements Serializable{
 	private static final long serialVersionUID = 1L;
-	private ArrayList<Endereco> vetEnd = new ArrayList<>();
+	private static ArrayList<Endereco> vetEnd = new ArrayList<>();
 	
-	public void cadastrar(Endereco end) {
-		this.vetEnd.add(end);
+	public static void cadastrar(Endereco end) {
+		DadosEndereco.vetEnd.add(end);
 	}
 	
-	public void listar() {
-		for(Endereco e: this.vetEnd) {
+	public static void listar() {
+		for(Endereco e: DadosEndereco.vetEnd) {
 			System.out.println(e.mostrarDados());
 		}
 	}
 	
-	public Endereco buscar(String cep, int num) {
+	public static Endereco buscar(String cep, int num) {
 		Endereco c = null;
 		
-		for(Endereco e: this.vetEnd) {
+		for(Endereco e: DadosEndereco.vetEnd) {
 			if(e.getCep().equals(cep) && e.getNum()==num) {
 				c = e;
 				break;
@@ -31,10 +31,10 @@ public class DadosEndereco implements Serializable, Dados{
 		return c;
 	}
 	
-	public boolean excluir(String cep, int num) {
-		Endereco e = this.buscar(cep, num);
+	public static boolean excluir(String cep, int num) {
+		Endereco e = DadosEndereco.buscar(cep, num);
 		if(e!=null) {
-			this.vetEnd.remove(e);
+			DadosEndereco.vetEnd.remove(e);
 			return true;
 		}
 		else {
@@ -42,8 +42,8 @@ public class DadosEndereco implements Serializable, Dados{
 		}
 	}
 	
-	public boolean gravarBin() {
-		if(ArquivoIO.escritaObjeto(this, "enderecoBin.arq")) {
+	public static boolean gravarBin() {
+		if(ArquivoIO.escritaObjeto(DadosEndereco.class, "enderecoBin.arq")) {
 			return true;
 		}
 		else {
@@ -51,8 +51,4 @@ public class DadosEndereco implements Serializable, Dados{
 		}
 	}
 	
-	public static DadosEndereco recuperarBin() {
-		return (DadosEndereco)ArquivoIO.leituraObjeto("enderecoBin.arq");
-
-	}
 }

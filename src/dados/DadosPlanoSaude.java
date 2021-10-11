@@ -4,24 +4,24 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import clinica.*;
 
-public class DadosPlanoSaude implements Serializable, Dados{
+public class DadosPlanoSaude implements Serializable{
 	private static final long serialVersionUID = 1L;
-	private ArrayList<PlanoSaude> vetPlan = new ArrayList<>();
+	private static ArrayList<PlanoSaude> vetPlan = new ArrayList<>();
 	
-	public void cadastrar(PlanoSaude plano) {
-		this.vetPlan.add(plano);
+	public static void cadastrar(PlanoSaude plano) {
+		DadosPlanoSaude.vetPlan.add(plano);
 	}
 	
-	public void listar() {
-		for(PlanoSaude p: this.vetPlan) {
+	public static void listar() {
+		for(PlanoSaude p: DadosPlanoSaude.vetPlan) {
 			System.out.println(p.toString());
 		}
 	}
 	
-	public PlanoSaude buscar(String cnpj) {
+	public static PlanoSaude buscar(String cnpj) {
 		PlanoSaude c = null;
 		
-		for(PlanoSaude p: this.vetPlan) {
+		for(PlanoSaude p: DadosPlanoSaude.vetPlan) {
 			if(p.getCnpj().equals(cnpj)) {
 				c = p;
 				break;
@@ -30,10 +30,10 @@ public class DadosPlanoSaude implements Serializable, Dados{
 		return c;
 	}
 	
-	public boolean excluir(String cnpj) {
-		PlanoSaude c = this.buscar(cnpj);
+	public static boolean excluir(String cnpj) {
+		PlanoSaude c = DadosPlanoSaude.buscar(cnpj);
 		if(c!=null) {
-			this.vetPlan.remove(c);
+			DadosPlanoSaude.vetPlan.remove(c);
 			return true;
 		}
 		else {
@@ -41,8 +41,8 @@ public class DadosPlanoSaude implements Serializable, Dados{
 		}
 	}
 	
-	public boolean gravarBin() {
-		if(ArquivoIO.escritaObjeto(this, "planoSaudeBin.arq")) {
+	public static boolean gravarBin() {
+		if(ArquivoIO.escritaObjeto(DadosPlanoSaude.class, "planoSaudeBin.arq")) {
 			return true;
 		}
 		else {
@@ -50,8 +50,4 @@ public class DadosPlanoSaude implements Serializable, Dados{
 		}
 	}
 	
-	public static DadosPlanoSaude recuperarBin() {
-		return (DadosPlanoSaude)ArquivoIO.leituraObjeto("planoSaudeBin.arq");
-
-	}
 }

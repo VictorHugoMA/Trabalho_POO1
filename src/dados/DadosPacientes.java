@@ -4,24 +4,24 @@ import clinica.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class DadosPacientes implements Serializable, Dados{
+public class DadosPacientes implements Serializable{
 	private static final long serialVersionUID = 1L;
-	private ArrayList<Paciente> vetPac = new ArrayList<>();
+	private static ArrayList<Paciente> vetPac = new ArrayList<>();
 	
-	public void cadastrar(Paciente ps) {
-		this.vetPac.add(ps);
+	public static void cadastrar(Paciente ps) {
+		DadosPacientes.vetPac.add(ps);
 	}
 	
-	public void listar() {
-		for(Paciente p: this.vetPac) {
+	public static void listar() {
+		for(Paciente p: DadosPacientes.vetPac) {
 			System.out.println(p.mostrarDados());
 		}
 	}
 	
-	public Paciente buscar(String cpf) {
+	public static Paciente buscar(String cpf) {
 		Paciente c = null;
 		
-		for(Paciente p: this.vetPac) {
+		for(Paciente p: DadosPacientes.vetPac) {
 			if(p.getCpf().equals(ValidaCPF.imprimeCPF(cpf))) {
 				c = p;
 				break;
@@ -30,10 +30,10 @@ public class DadosPacientes implements Serializable, Dados{
 		return c;
 	}
 	
-	public boolean excluir(String cpf) {
-		Paciente c = this.buscar(cpf);
+	public static boolean excluir(String cpf) {
+		Paciente c = DadosPacientes.buscar(cpf);
 		if(c!=null) {
-			this.vetPac.remove(c);
+			DadosPacientes.vetPac.remove(c);
 			return true;
 		}
 		else {
@@ -41,18 +41,13 @@ public class DadosPacientes implements Serializable, Dados{
 		}
 	}
 	
-	public boolean gravarBin() {
-		if(ArquivoIO.escritaObjeto(this, "pacienteBin.arq")) {
+	public static boolean gravarBin() {
+		if(ArquivoIO.escritaObjeto(DadosPacientes.class, "pacienteBin.arq")) {
 			return true;
 		}
 		else {
 			return false;
 		}
-	}
-	
-	public static DadosPacientes recuperarBin() {
-		return (DadosPacientes)ArquivoIO.leituraObjeto("pacienteBin.arq");
-
 	}
 	
 	

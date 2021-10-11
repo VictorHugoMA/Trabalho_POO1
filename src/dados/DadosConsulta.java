@@ -4,24 +4,24 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import clinica.*;
 
-public class DadosConsulta implements Serializable, Dados{
+public class DadosConsulta implements Serializable{
 	private static final long serialVersionUID = 1L;
-	private ArrayList<Consulta> vetCons = new ArrayList<>();
+	private static ArrayList<Consulta> vetCons = new ArrayList<>();
 	
-	public void cadastrar(Consulta c) {
-		this.vetCons.add(c);
+	public static void cadastrar(Consulta c) {
+		DadosConsulta.vetCons.add(c);
 	}
 	
-	public void listar() {
-		for(Consulta c: this.vetCons) {
+	public static void listar() {
+		for(Consulta c: DadosConsulta.vetCons) {
 			System.out.println(c.mostrarDados());
 		}
 	}
 	
-	public ArrayList<Consulta> buscarPorMed(String cpf) {
+	public static  ArrayList<Consulta> buscarPorMed(String cpf) {
 		ArrayList<Consulta> c = new ArrayList<>();
 		
-		for(Consulta p: this.vetCons) {
+		for(Consulta p: DadosConsulta.vetCons) {
 			if(p.getMedico().getCpf().equals(ValidaCPF.imprimeCPF(cpf))) {
 				c.add(p);
 				break;
@@ -30,10 +30,10 @@ public class DadosConsulta implements Serializable, Dados{
 		return c;
 	}
 	
-	public ArrayList<Consulta> buscarPorPac(String cpf) {
+	public static ArrayList<Consulta> buscarPorPac(String cpf) {
 		ArrayList<Consulta> c = new ArrayList<>();
 		
-		for(Consulta p: this.vetCons) {
+		for(Consulta p: DadosConsulta.vetCons) {
 			if(p.getPacSPlano().getCpf().equals(ValidaCPF.imprimeCPF(cpf))) {
 				c.add(p);
 				break;
@@ -48,10 +48,10 @@ public class DadosConsulta implements Serializable, Dados{
 	}
 	
 	
-	public boolean excluirPorMed(String cpf) {
-		for(Consulta p: this.vetCons) {
+	public static boolean excluirPorMed(String cpf) {
+		for(Consulta p: DadosConsulta.vetCons) {
 			if(p.getMedico().getCpf().equals(ValidaCPF.imprimeCPF(cpf))) {
-				this.vetCons.remove(p);				
+				DadosConsulta.vetCons.remove(p);				
 			}
 			return true;
 		}
@@ -59,13 +59,13 @@ public class DadosConsulta implements Serializable, Dados{
 		
 	}
 	
-	public boolean excluirPorPac(String cpf) {
-		for(Consulta p: this.vetCons) {
+	public static boolean excluirPorPac(String cpf) {
+		for(Consulta p: DadosConsulta.vetCons) {
 			if(p.getPacSPlano().getCpf().equals(ValidaCPF.imprimeCPF(cpf))) {
-				this.vetCons.remove(p);				
+				DadosConsulta.vetCons.remove(p);				
 			}
 			else if(p.getPacCPlano().getCpf().equals(ValidaCPF.imprimeCPF(cpf))) {
-				this.vetCons.remove(p);				
+				DadosConsulta.vetCons.remove(p);				
 			}
 			return true;
 		}
@@ -73,18 +73,13 @@ public class DadosConsulta implements Serializable, Dados{
 		
 	}
 	
-	public boolean gravarBin() {
-		if(ArquivoIO.escritaObjeto(this, "consultaBin.arq")) {
+	public static boolean gravarBin() {
+		if(ArquivoIO.escritaObjeto(DadosConsulta.class, "consultaBin.arq")) {
 			return true;
 		}
 		else {
 			return false;
 		}
-	}
-	
-	public static DadosConsulta recuperarBin() {
-		return (DadosConsulta)ArquivoIO.leituraObjeto("consultaBin.arq");
-
 	}
 	
 }
