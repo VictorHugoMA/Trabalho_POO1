@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
@@ -88,29 +89,7 @@ public class CadastroMedico extends JFrame {
 		getContentPane().add(textFieldRg);
 		textFieldRg.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Enviar");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String nome = textFieldNome.getText();
-				Medico p = new Medico();
-				p.setNome(nome);
-				p.setCpf(textFieldCpf.getText());
-				p.setRg(textFieldRg.getText());
-				p.setEstadoCivil(textFieldEstCivil.getText());
-				
-				try { //teste
-					p.setStrDataAdmi(textFieldDataAdm.getText());
-				} catch (java.text.ParseException e1) {
-					e1.printStackTrace();
-				}
-				
-				//Endereco
-				//dados medico
-				
-			}
-		});
-		btnNewButton.setBounds(328, 458, 89, 23);
-		getContentPane().add(btnNewButton);
+		
 		
 		JLabel lblNewLabel_4 = new JLabel("Est. Civil:");
 		lblNewLabel_4.setBounds(10, 128, 51, 14);
@@ -120,10 +99,6 @@ public class CadastroMedico extends JFrame {
 		textFieldEstCivil.setBounds(83, 125, 86, 20);
 		getContentPane().add(textFieldEstCivil);
 		textFieldEstCivil.setColumns(10);
-		
-		JButton btnNewButton_1 = new JButton("Voltar");
-		btnNewButton_1.setBounds(229, 458, 89, 23);
-		getContentPane().add(btnNewButton_1);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(10, 153, 664, 2);
@@ -238,6 +213,41 @@ public class CadastroMedico extends JFrame {
 		JLabel lblNewLabel_15_2_1 = new JLabel("Especialidades");
 		lblNewLabel_15_2_1.setBounds(10, 412, 159, 14);
 		getContentPane().add(lblNewLabel_15_2_1);
+		
+		JButton botaoVoltar = new JButton("Voltar");
+		botaoVoltar.setBounds(229, 458, 89, 23);
+		getContentPane().add(botaoVoltar);
+		botaoVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Voltar", "Teste", JOptionPane.INFORMATION_MESSAGE);
+				
+			}
+		});
+		
+		
+		JButton botaoEnviar = new JButton("Enviar");
+		botaoEnviar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String nome = textFieldNome.getText();
+				Medico p = new Medico();
+				p.setNome(nome);
+				p.setCpf(textFieldCpf.getText());
+				p.setRg(textFieldRg.getText());
+				p.setEstadoCivil(textFieldEstCivil.getText());
+				
+				try { //teste
+					p.setStrDataAdmi(textFieldDataAdm.getText());
+				} catch (java.text.ParseException e1) {
+					e1.printStackTrace();
+				}
+				
+				//Endereco
+				//dados medico
+				
+			}
+		});
+		botaoEnviar.setBounds(328, 458, 89, 23);
+		getContentPane().add(botaoEnviar);
 		
 		
 		

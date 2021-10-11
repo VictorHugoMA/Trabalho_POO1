@@ -84,28 +84,6 @@ public class CadastroDemaisFunc extends JFrame {
 		getContentPane().add(textFieldRg);
 		textFieldRg.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Enviar");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String nome = textFieldNome.getText();
-				DemaisFunc p = new DemaisFunc();
-				p.setNome(nome);
-				p.setCpf(textFieldCpf.getText());
-				p.setRg(textFieldRg.getText());
-				p.setEstadoCivil(textFieldEstCivil.getText());
-				try {
-					p.setStrDataAdmi(textFieldDataAdm.getText());
-				} catch (ParseException e1) {
-					
-				}
-				//Endereco
-				//dados funcionario
-				
-			}
-		});
-		btnNewButton.setBounds(312, 384, 89, 23);
-		getContentPane().add(btnNewButton);
-		
 		JLabel lblNewLabel_4 = new JLabel("Est. Civil:");
 		lblNewLabel_4.setBounds(10, 128, 51, 14);
 		getContentPane().add(lblNewLabel_4);
@@ -114,10 +92,6 @@ public class CadastroDemaisFunc extends JFrame {
 		textFieldEstCivil.setBounds(83, 125, 86, 20);
 		getContentPane().add(textFieldEstCivil);
 		textFieldEstCivil.setColumns(10);
-		
-		JButton btnNewButton_1 = new JButton("Voltar");
-		btnNewButton_1.setBounds(213, 384, 89, 23);
-		getContentPane().add(btnNewButton_1);
 		
 		JSeparator separator = new JSeparator();
 		separator.setBounds(10, 153, 664, 2);
@@ -228,6 +202,38 @@ public class CadastroDemaisFunc extends JFrame {
 		JLabel lblNewLabel_6 = new JLabel("Cargo");
 		lblNewLabel_6.setBounds(281, 314, 46, 14);
 		getContentPane().add(lblNewLabel_6);
+		
+		JButton botaoVoltar = new JButton("Voltar");
+		botaoVoltar.setBounds(213, 384, 89, 23);
+		getContentPane().add(botaoVoltar);
+		botaoVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Voltar", "Teste", JOptionPane.INFORMATION_MESSAGE);
+				
+			}
+		});
+		
+		JButton botaoEnviar = new JButton("Enviar");
+		botaoEnviar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String nome = textFieldNome.getText();
+				DemaisFunc p = new DemaisFunc();
+				p.setNome(nome);
+				p.setCpf(textFieldCpf.getText());
+				p.setRg(textFieldRg.getText());
+				p.setEstadoCivil(textFieldEstCivil.getText());
+				try {
+					p.setStrDataAdmi(textFieldDataAdm.getText());
+				} catch (ParseException e1) {
+					
+				}
+				//Endereco
+				//dados funcionario
+				
+			}
+		});
+		botaoEnviar.setBounds(312, 384, 89, 23);
+		getContentPane().add(botaoEnviar);
 		
 		
 		

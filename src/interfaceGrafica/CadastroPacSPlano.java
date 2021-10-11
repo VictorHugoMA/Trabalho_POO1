@@ -77,29 +77,6 @@ public class CadastroPacSPlano extends JFrame {
 		getContentPane().add(textFieldRg);
 		textFieldRg.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Enviar");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String nome = textFieldNome.getText();
-				PacSPlano p = new PacSPlano();
-				p.setNome(nome);
-				p.setCpf(textFieldCpf.getText());
-				p.setRg(textFieldRg.getText());
-				p.setEstadoCivil(textFieldEstCivil.getText());
-				p.setSexo(textFieldSexo.getText());
-				try {
-					p.setStrDataNasc(textFieldDatNasc.getText());
-				} catch (ParseException e1) {
-					
-				}
-				//Endereco
-				//Desconto especial
-				
-			}
-		});
-		btnNewButton.setBounds(312, 384, 89, 23);
-		getContentPane().add(btnNewButton);
-		
 		JLabel lblNewLabel_4 = new JLabel("Est. Civil:");
 		lblNewLabel_4.setBounds(10, 128, 51, 14);
 		getContentPane().add(lblNewLabel_4);
@@ -108,10 +85,6 @@ public class CadastroPacSPlano extends JFrame {
 		textFieldEstCivil.setBounds(83, 125, 86, 20);
 		getContentPane().add(textFieldEstCivil);
 		textFieldEstCivil.setColumns(10);
-		
-		JButton btnNewButton_1 = new JButton("Voltar");
-		btnNewButton_1.setBounds(213, 384, 89, 23);
-		getContentPane().add(btnNewButton_1);
 		
 		JLabel lblNewLabel_5 = new JLabel("Sexo:");
 		lblNewLabel_5.setBounds(10, 153, 46, 14);
@@ -202,17 +175,50 @@ public class CadastroPacSPlano extends JFrame {
 		getContentPane().add(lblNewLabel_14);
 		
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("Sim");
-		rdbtnNewRadioButton.setBounds(10, 323, 109, 23);
-		getContentPane().add(rdbtnNewRadioButton);
+		JRadioButton radioSim = new JRadioButton("Sim");
+		radioSim.setBounds(10, 323, 109, 23);
+		getContentPane().add(radioSim);
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("N\u00E3o");
-		rdbtnNewRadioButton_1.setBounds(10, 345, 109, 23);
-		getContentPane().add(rdbtnNewRadioButton_1);
+		JRadioButton radioNao = new JRadioButton("N\u00E3o");
+		radioNao.setBounds(10, 345, 109, 23);
+		getContentPane().add(radioNao);
 		
 		ButtonGroup bg = new ButtonGroup();
-		bg.add(rdbtnNewRadioButton);
-		bg.add(rdbtnNewRadioButton_1);
+		bg.add(radioSim);
+		bg.add(radioNao);
+		
+		JButton botaoVoltar = new JButton("Voltar");
+		botaoVoltar.setBounds(213, 384, 89, 23);
+		getContentPane().add(botaoVoltar);
+		botaoVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Voltar", "Teste", JOptionPane.INFORMATION_MESSAGE);
+				
+			}
+		});
+		
+		JButton botaoEnviar = new JButton("Enviar");
+		botaoEnviar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String nome = textFieldNome.getText();
+				PacSPlano p = new PacSPlano();
+				p.setNome(nome);
+				p.setCpf(textFieldCpf.getText());
+				p.setRg(textFieldRg.getText());
+				p.setEstadoCivil(textFieldEstCivil.getText());
+				p.setSexo(textFieldSexo.getText());
+				try {
+					p.setStrDataNasc(textFieldDatNasc.getText());
+				} catch (ParseException e1) {
+					
+				}
+				//Endereco
+				//Desconto especial
+				
+			}
+		});
+		botaoEnviar.setBounds(312, 384, 89, 23);
+		getContentPane().add(botaoEnviar);
 		
 		
 	}
