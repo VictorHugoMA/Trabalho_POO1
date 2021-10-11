@@ -5,18 +5,21 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.JButton;
+import javax.swing.border.EmptyBorder;
 
-public class ExcluirPlano extends JFrame {
+import dados.DadosExame;
+import dados.DadosFuncionarios;
+
+public class ExcluirExame extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textFieldCnpj;
+	private JTextField textFieldNome;
 
 	/**
 	 * Launch the application.
@@ -25,7 +28,7 @@ public class ExcluirPlano extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ExcluirPlano frame = new ExcluirPlano();
+					ExcluirExame frame = new ExcluirExame();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +40,7 @@ public class ExcluirPlano extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ExcluirPlano() {
+	public ExcluirExame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -45,18 +48,19 @@ public class ExcluirPlano extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblExcluirPlanoDe = new JLabel("Excluir Plano de Saude");
-		lblExcluirPlanoDe.setBounds(163, 11, 144, 14);
-		contentPane.add(lblExcluirPlanoDe);
+		JLabel lblNewLabel = new JLabel("Excluir Exame");
+		lblNewLabel.setBounds(170, 11, 116, 14);
+		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("CNPJ:");
-		lblNewLabel_1.setBounds(10, 50, 32, 14);
+		JLabel lblNewLabel_1 = new JLabel("Nome:");
+		lblNewLabel_1.setBounds(10, 50, 49, 14);
 		contentPane.add(lblNewLabel_1);
 		
-		textFieldCnpj = new JTextField();
-		textFieldCnpj.setColumns(10);
-		textFieldCnpj.setBounds(43, 47, 86, 20);
-		contentPane.add(textFieldCnpj);
+		textFieldNome = new JTextField();
+		textFieldNome.setBounds(61, 47, 86, 20);
+		contentPane.add(textFieldNome);
+		textFieldNome.setColumns(10);
+		
 		
 		JButton botaoVoltar = new JButton("Voltar");
 		botaoVoltar.setBounds(119, 227, 89, 23);
@@ -73,6 +77,7 @@ public class ExcluirPlano extends JFrame {
 		contentPane.add(botaoExcluir);
 		botaoExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				DadosExame.excluir(textFieldNome.getText());
 				JOptionPane.showMessageDialog(null, "Excluir", "Teste", JOptionPane.INFORMATION_MESSAGE);
 				
 			}

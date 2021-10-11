@@ -2,11 +2,19 @@ package interfaceGrafica;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import dados.DadosPacientes;
+import dados.DadosPlanoSaude;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
@@ -55,12 +63,26 @@ public class ExcluirPac extends JFrame {
 		contentPane.add(textFieldCpf);
 		textFieldCpf.setColumns(10);
 		
-		JButton btnNewButtonVoltar = new JButton("Voltar");
-		btnNewButtonVoltar.setBounds(119, 227, 89, 23);
-		contentPane.add(btnNewButtonVoltar);
 		
-		JButton btnNewButtonExcluir = new JButton("Excluir");
-		btnNewButtonExcluir.setBounds(218, 227, 89, 23);
-		contentPane.add(btnNewButtonExcluir);
+		JButton botaoVoltar = new JButton("Voltar");
+		botaoVoltar.setBounds(119, 227, 89, 23);
+		contentPane.add(botaoVoltar);
+		botaoVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Voltar", "Teste", JOptionPane.INFORMATION_MESSAGE);
+				
+			}
+		});
+		
+		JButton botaoExcluir = new JButton("Excluir");
+		botaoExcluir.setBounds(218, 227, 89, 23);
+		contentPane.add(botaoExcluir);
+		botaoExcluir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				DadosPacientes.excluir(textFieldCpf.getText());
+				JOptionPane.showMessageDialog(null, "Excluir", "Teste", JOptionPane.INFORMATION_MESSAGE);
+				
+			}
+		});
 	}
 }
