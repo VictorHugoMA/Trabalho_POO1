@@ -5,15 +5,15 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.JButton;
+import javax.swing.border.EmptyBorder;
 
-public class BuscarPac extends JFrame {
+public class BuscarFunc extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textFieldCpf;
@@ -25,7 +25,7 @@ public class BuscarPac extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					BuscarPac frame = new BuscarPac();
+					BuscarFunc frame = new BuscarFunc();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +37,7 @@ public class BuscarPac extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public BuscarPac() {
+	public BuscarFunc() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -45,9 +45,9 @@ public class BuscarPac extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblBuscarPaciente = new JLabel("Buscar Paciente");
-		lblBuscarPaciente.setBounds(170, 11, 116, 14);
-		contentPane.add(lblBuscarPaciente);
+		JLabel lblBuscarFunc = new JLabel("Buscar Funcionario");
+		lblBuscarFunc.setBounds(170, 11, 116, 14);
+		contentPane.add(lblBuscarFunc);
 		
 		JLabel lblNewLabel_1 = new JLabel("CPF:");
 		lblNewLabel_1.setBounds(10, 50, 32, 14);

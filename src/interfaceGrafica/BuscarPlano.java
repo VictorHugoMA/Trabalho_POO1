@@ -5,18 +5,18 @@ import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.JButton;
+import javax.swing.border.EmptyBorder;
 
-public class BuscarPac extends JFrame {
+public class BuscarPlano extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textFieldCpf;
+	private JTextField textFieldCnpj;
 
 	/**
 	 * Launch the application.
@@ -25,7 +25,7 @@ public class BuscarPac extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					BuscarPac frame = new BuscarPac();
+					BuscarPlano frame = new BuscarPlano();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +37,7 @@ public class BuscarPac extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public BuscarPac() {
+	public BuscarPlano() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -45,18 +45,18 @@ public class BuscarPac extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblBuscarPaciente = new JLabel("Buscar Paciente");
-		lblBuscarPaciente.setBounds(170, 11, 116, 14);
-		contentPane.add(lblBuscarPaciente);
+		JLabel lblBuscarPlano = new JLabel("Buscar Plano de Saude");
+		lblBuscarPlano.setBounds(170, 11, 116, 14);
+		contentPane.add(lblBuscarPlano);
 		
-		JLabel lblNewLabel_1 = new JLabel("CPF:");
+		JLabel lblNewLabel_1 = new JLabel("CNPJ:");
 		lblNewLabel_1.setBounds(10, 50, 32, 14);
 		contentPane.add(lblNewLabel_1);
 		
-		textFieldCpf = new JTextField();
-		textFieldCpf.setColumns(10);
-		textFieldCpf.setBounds(43, 47, 86, 20);
-		contentPane.add(textFieldCpf);
+		textFieldCnpj = new JTextField();
+		textFieldCnpj.setColumns(10);
+		textFieldCnpj.setBounds(43, 47, 86, 20);
+		contentPane.add(textFieldCnpj);
 		
 		JButton botaoVoltar = new JButton("Voltar");
 		botaoVoltar.setBounds(119, 227, 89, 23);
