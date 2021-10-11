@@ -42,7 +42,7 @@ public class DadosFuncionarios implements Serializable{
 	}
 	
 	public static boolean gravarBin() {
-		if(ArquivoIO.escritaObjeto(DadosFuncionarios.class, "funcionarioBin.arq")) {
+		if(ArquivoIO.escritaObjeto(vetFunc, "funcionarioBin.arq")) {
 			return true;
 		}
 		else {

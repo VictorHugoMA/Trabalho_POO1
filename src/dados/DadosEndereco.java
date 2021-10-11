@@ -43,7 +43,7 @@ public class DadosEndereco implements Serializable{
 	}
 	
 	public static boolean gravarBin() {
-		if(ArquivoIO.escritaObjeto(DadosEndereco.class, "enderecoBin.arq")) {
+		if(ArquivoIO.escritaObjeto(vetEnd, "enderecoBin.arq")) {
 			return true;
 		}
 		else {

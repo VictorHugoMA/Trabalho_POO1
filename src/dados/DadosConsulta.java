@@ -74,7 +74,7 @@ public class DadosConsulta implements Serializable{
 	}
 	
 	public static boolean gravarBin() {
-		if(ArquivoIO.escritaObjeto(DadosConsulta.class, "consultaBin.arq")) {
+		if(ArquivoIO.escritaObjeto(vetCons, "consultaBin.arq")) {
 			return true;
 		}
 		else {

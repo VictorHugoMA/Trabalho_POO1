@@ -42,7 +42,7 @@ public class DadosPacientes implements Serializable{
 	}
 	
 	public static boolean gravarBin() {
-		if(ArquivoIO.escritaObjeto(DadosPacientes.class, "pacienteBin.arq")) {
+		if(ArquivoIO.escritaObjeto(vetPac, "pacienteBin.arq")) {
 			return true;
 		}
 		else {
