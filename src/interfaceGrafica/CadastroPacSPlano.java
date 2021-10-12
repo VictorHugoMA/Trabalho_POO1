@@ -1,6 +1,9 @@
 package interfaceGrafica;
 
+import clinica.Endereco;
 import clinica.PacSPlano;
+import dados.DadosPacientes;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -213,7 +216,26 @@ public class CadastroPacSPlano extends JFrame {
 					
 				}
 				//Endereco
+				Endereco end = new Endereco();
+				end.setRua(textFieldRua.getText());
+				int num = Integer.parseInt(textFieldNumEnd.getText());
+				end.setNum(num);
+				end.setCompl(textFieldCompl.getText());
+				end.setBairro(textFieldBairro.getText());
+				end.setCidade(textFieldCidade.getText());
+				end.setCep(textFieldCep.getText());
+				p.setEndereco(end);
+				
 				//Desconto especial
+				if(radioNao.isSelected()) {
+					p.setDescEsp(false);
+				}
+				else if(radioSim.isSelected()) {
+					p.setDescEsp(true);
+				}
+				
+				DadosPacientes.cadastrar(p);
+				JOptionPane.showMessageDialog(null, p.mostrarDados(), "Cadastro", JOptionPane.INFORMATION_MESSAGE);
 				
 			}
 		});

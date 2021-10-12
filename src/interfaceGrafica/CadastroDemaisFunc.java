@@ -6,6 +6,10 @@ import java.awt.EventQueue;
 import javax.swing.border.EmptyBorder;
 
 import clinica.DemaisFunc;
+import clinica.Endereco;
+import dados.DadosFuncionarios;
+import dados.DadosPacientes;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -228,7 +232,27 @@ public class CadastroDemaisFunc extends JFrame {
 					
 				}
 				//Endereco
+				Endereco end = new Endereco();
+				end.setRua(textFieldRua.getText());
+				int num = Integer.parseInt(textFieldNumEnd.getText());
+				end.setNum(num);
+				end.setCompl(textFieldCompl.getText());
+				end.setBairro(textFieldBairro.getText());
+				end.setCidade(textFieldCidade.getText());
+				end.setCep(textFieldCep.getText());
+				p.setEndereco(end);
+				
 				//dados funcionario
+				float numS = Float.parseFloat(textFieldSalBase.getText());
+				p.setSalarioBase(numS);
+				int numC = Integer.parseInt(textFieldNumCartTrab.getText());
+				p.setNumCartTrab(numC);
+				p.setCargo(textFieldCargo.getText());
+				
+				
+				
+				DadosFuncionarios.cadastrar(p);
+				JOptionPane.showMessageDialog(null, p.mostrarDados(), "Cadastro", JOptionPane.INFORMATION_MESSAGE);
 				
 			}
 		});

@@ -11,9 +11,12 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import clinica.DemaisFunc;
+import clinica.Endereco;
 import clinica.Exame;
 import clinica.PacSPlano;
 import dados.DadosExame;
+import dados.DadosFuncionarios;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -52,7 +55,7 @@ public class CadastroExame extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Cadastro de Exame");
-		lblNewLabel.setBounds(178, 11, 121, 14);
+		lblNewLabel.setBounds(157, 11, 121, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nome: ");
@@ -64,9 +67,10 @@ public class CadastroExame extends JFrame {
 		contentPane.add(textFieldNome);
 		textFieldNome.setColumns(10);
 		
+
 		JButton botaoVoltar = new JButton("Voltar");
-		botaoVoltar.setBounds(213, 384, 89, 23);
-		getContentPane().add(botaoVoltar);
+		botaoVoltar.setBounds(129, 227, 89, 23);
+		contentPane.add(botaoVoltar);
 		botaoVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "Voltar", "Teste", JOptionPane.INFORMATION_MESSAGE);
@@ -75,15 +79,17 @@ public class CadastroExame extends JFrame {
 		});
 		
 		JButton botaoEnviar = new JButton("Enviar");
+		botaoEnviar.setBounds(228, 227, 89, 23);
+		contentPane.add(botaoEnviar);
 		botaoEnviar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Exame ex = new Exame(textFieldNome.getText());
-				DadosExame.cadastrar(ex);
 				
+				DadosExame.cadastrar(ex);
+				JOptionPane.showMessageDialog(null, ex.toString(), "Cadastro", JOptionPane.INFORMATION_MESSAGE);
 				
 			}
 		});
-		botaoEnviar.setBounds(312, 384, 89, 23);
-		getContentPane().add(botaoEnviar);
+		
 	}
 }

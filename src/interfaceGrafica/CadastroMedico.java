@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -12,7 +14,11 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+
+import clinica.Endereco;
 import clinica.Medico;
+import dados.DadosFuncionarios;
+
 import javax.swing.JFormattedTextField;
 import javax.swing.JComboBox;
 
@@ -235,14 +241,34 @@ public class CadastroMedico extends JFrame {
 				p.setRg(textFieldRg.getText());
 				p.setEstadoCivil(textFieldEstCivil.getText());
 				
-				try { //teste
+				try {
 					p.setStrDataAdmi(textFieldDataAdm.getText());
-				} catch (java.text.ParseException e1) {
-					e1.printStackTrace();
+				} catch (ParseException e1) {
+					
 				}
 				
 				//Endereco
+				Endereco end = new Endereco();
+				end.setRua(textFieldRua.getText());
+				int num = Integer.parseInt(textFieldNumEnd.getText());
+				end.setNum(num);
+				end.setCompl(textFieldCompl.getText());
+				end.setBairro(textFieldBairro.getText());
+				end.setCidade(textFieldCidade.getText());
+				end.setCep(textFieldCep.getText());
+				p.setEndereco(end);
+				
+				//dados func
+				int numCT = Integer.parseInt(textFieldNumCartTrab.getText());
+				p.setNumCartTrab(numCT);
+				p.addEspecialidades(textFieldEsp.getText());
+				
 				//dados medico
+				int numC = Integer.parseInt(textFieldCRM.getText());
+				p.setCrm(numC);
+				
+				DadosFuncionarios.cadastrar(p);
+				JOptionPane.showMessageDialog(null, p.mostrarDados(), "Cadastro", JOptionPane.INFORMATION_MESSAGE);
 				
 			}
 		});

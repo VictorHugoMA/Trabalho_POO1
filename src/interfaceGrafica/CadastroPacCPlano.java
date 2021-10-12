@@ -1,6 +1,9 @@
 package interfaceGrafica;
 
+import clinica.Endereco;
 import clinica.PacCPlano;
+import dados.DadosPacientes;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -22,7 +25,7 @@ public class CadastroPacCPlano extends JFrame {
 	private JTextField textFieldCep;
 	private JTextField textFieldNome;
 	private JTextField textFieldNumCart;
-	private JTextField textField;
+	private JTextField textFieldDataIng;
 
 	/**
 	 * Launch the application.
@@ -191,10 +194,10 @@ public class CadastroPacCPlano extends JFrame {
 		lblNewLabel_16.setBounds(213, 328, 86, 14);
 		getContentPane().add(lblNewLabel_16);
 		
-		textField = new JTextField();
-		textField.setBounds(297, 325, 86, 20);
-		getContentPane().add(textField);
-		textField.setColumns(10);
+		textFieldDataIng = new JTextField();
+		textFieldDataIng.setBounds(297, 325, 86, 20);
+		getContentPane().add(textFieldDataIng);
+		textFieldDataIng.setColumns(10);
 		
 		JButton botaoVoltar = new JButton("Voltar");
 		botaoVoltar.setBounds(213, 384, 89, 23);
@@ -218,13 +221,28 @@ public class CadastroPacCPlano extends JFrame {
 				p.setSexo(textFieldSexo.getText());
 				try {
 					p.setStrDataNasc(textFieldDatNasc.getText());
+					p.setStrDataIngPlano(textFieldDataIng.getText());
 				} catch (ParseException e1) {
 					
 				}
-				JOptionPane.showMessageDialog(null, "Cadastrado", "Cadastro", JOptionPane.INFORMATION_MESSAGE);
 				//Endereco
-				//Plano
+				Endereco end = new Endereco();
+				end.setRua(textFieldRua.getText());
+				int num = Integer.parseInt(textFieldNumEnd.getText());
+				end.setNum(num);
+				end.setCompl(textFieldCompl.getText());
+				end.setBairro(textFieldBairro.getText());
+				end.setCidade(textFieldCidade.getText());
+				end.setCep(textFieldCep.getText());
+				p.setEndereco(end);
 				
+				//Plano
+				int numC = Integer.parseInt(textFieldNumCart.getText());
+				p.setNumCarteirinha(numC);
+				
+				
+				DadosPacientes.cadastrar(p);
+				JOptionPane.showMessageDialog(null, p.mostrarDados(), "Cadastro", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		botaoEnviar.setBounds(312, 384, 89, 23);

@@ -173,10 +173,24 @@ public class CadastroPlano extends JFrame {
 				pla.setNome(textFieldNome.getText());
 				pla.setCnpj(textFieldCnpj.getText());
 				
-				JOptionPane.showMessageDialog(null, "Cadastrado", "Cadastro", JOptionPane.INFORMATION_MESSAGE);
 				//endereco
-				//valor
+				Endereco end = new Endereco();
+				end.setRua(textFieldRua.getText());
+				int num = Integer.parseInt(textFieldNumEnd.getText());
+				end.setNum(num);
+				end.setCompl(textFieldCompl.getText());
+				end.setBairro(textFieldBairro.getText());
+				end.setCidade(textFieldCidade.getText());
+				end.setCep(textFieldCep.getText());
+				pla.setEndereco(end);
 				
+				
+				//valor
+				float numV = Float.parseFloat(textFieldValor.getText());
+				pla.setValorCons(numV);
+				
+				DadosPlanoSaude.cadastrar(pla);
+				JOptionPane.showMessageDialog(null, "Cadastrado", "Cadastro", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		botaoEnviar.setBounds(312, 384, 89, 23);
