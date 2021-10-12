@@ -8,6 +8,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import dados.DadosPlanoSaude;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -46,16 +49,16 @@ public class ExcluirPlano extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblExcluirPlanoDe = new JLabel("Excluir Plano de Saude");
-		lblExcluirPlanoDe.setBounds(163, 11, 144, 14);
+		lblExcluirPlanoDe.setBounds(139, 11, 144, 14);
 		contentPane.add(lblExcluirPlanoDe);
 		
 		JLabel lblNewLabel_1 = new JLabel("CNPJ:");
-		lblNewLabel_1.setBounds(10, 50, 32, 14);
+		lblNewLabel_1.setBounds(10, 50, 51, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		textFieldCnpj = new JTextField();
 		textFieldCnpj.setColumns(10);
-		textFieldCnpj.setBounds(43, 47, 86, 20);
+		textFieldCnpj.setBounds(61, 47, 86, 20);
 		contentPane.add(textFieldCnpj);
 		
 		JButton botaoVoltar = new JButton("Voltar");
@@ -73,7 +76,12 @@ public class ExcluirPlano extends JFrame {
 		contentPane.add(botaoExcluir);
 		botaoExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Excluir", "Teste", JOptionPane.INFORMATION_MESSAGE);
+				if(DadosPlanoSaude.excluir(textFieldCnpj.getText())){
+					JOptionPane.showMessageDialog(null, "Plano de Saude excluido", "Excluir", JOptionPane.INFORMATION_MESSAGE);					
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Plano de Saude nao encontrado", "Excluir", JOptionPane.INFORMATION_MESSAGE);					
+				}
 				
 			}
 		});

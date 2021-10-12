@@ -48,8 +48,8 @@ public class ExcluirFunc extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Excluir Paciente");
-		lblNewLabel.setBounds(170, 11, 116, 14);
+		JLabel lblNewLabel = new JLabel("Excluir Funcionario");
+		lblNewLabel.setBounds(152, 11, 116, 14);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("CPF:");
@@ -77,8 +77,12 @@ public class ExcluirFunc extends JFrame {
 		contentPane.add(botaoExcluir);
 		botaoExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				DadosFuncionarios.excluir(textFieldCpf.getText());
-				JOptionPane.showMessageDialog(null, "Excluir", "Teste", JOptionPane.INFORMATION_MESSAGE);
+				if(DadosFuncionarios.excluir(textFieldCpf.getText())) {
+					JOptionPane.showMessageDialog(null, "Funcionario excluido", "Excluir", JOptionPane.INFORMATION_MESSAGE);					
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Funcionario nao encontrado", "Excluir", JOptionPane.INFORMATION_MESSAGE);
+				}
 				
 			}
 		});
