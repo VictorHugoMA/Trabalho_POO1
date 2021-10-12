@@ -13,6 +13,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import clinica.Paciente;
+import clinica.PlanoSaude;
+import dados.DadosPacientes;
+import dados.DadosPlanoSaude;
+
 public class BuscarPlano extends JFrame {
 
 	private JPanel contentPane;
@@ -46,16 +51,16 @@ public class BuscarPlano extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblBuscarPlano = new JLabel("Buscar Plano de Saude");
-		lblBuscarPlano.setBounds(170, 11, 116, 14);
+		lblBuscarPlano.setBounds(143, 11, 155, 14);
 		contentPane.add(lblBuscarPlano);
 		
 		JLabel lblNewLabel_1 = new JLabel("CNPJ:");
-		lblNewLabel_1.setBounds(10, 50, 32, 14);
+		lblNewLabel_1.setBounds(10, 50, 51, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		textFieldCnpj = new JTextField();
 		textFieldCnpj.setColumns(10);
-		textFieldCnpj.setBounds(43, 47, 86, 20);
+		textFieldCnpj.setBounds(61, 47, 86, 20);
 		contentPane.add(textFieldCnpj);
 		
 		JButton botaoVoltar = new JButton("Voltar");
@@ -73,7 +78,13 @@ public class BuscarPlano extends JFrame {
 		contentPane.add(botaoBuscar);
 		botaoBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Buscar", "Teste", JOptionPane.INFORMATION_MESSAGE);
+				PlanoSaude pla = DadosPlanoSaude.buscar(textFieldCnpj.getText());
+				if(pla!=null) {
+					JOptionPane.showMessageDialog(null, pla.toString(), "Busca", JOptionPane.INFORMATION_MESSAGE);
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Paciente nao encontrado", "Busca", JOptionPane.INFORMATION_MESSAGE);
+				}
 				
 			}
 		});

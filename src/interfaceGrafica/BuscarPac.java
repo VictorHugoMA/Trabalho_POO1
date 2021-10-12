@@ -8,6 +8,10 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import clinica.Paciente;
+import dados.DadosPacientes;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -46,7 +50,7 @@ public class BuscarPac extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblBuscarPaciente = new JLabel("Buscar Paciente");
-		lblBuscarPaciente.setBounds(170, 11, 116, 14);
+		lblBuscarPaciente.setBounds(157, 11, 116, 14);
 		contentPane.add(lblBuscarPaciente);
 		
 		JLabel lblNewLabel_1 = new JLabel("CPF:");
@@ -73,7 +77,13 @@ public class BuscarPac extends JFrame {
 		contentPane.add(botaoBuscar);
 		botaoBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Buscar", "Teste", JOptionPane.INFORMATION_MESSAGE);
+				Paciente p = DadosPacientes.buscar(textFieldCpf.getText());
+				if(p!=null) {
+					JOptionPane.showMessageDialog(null, p.mostrarDados(), "Busca", JOptionPane.INFORMATION_MESSAGE);
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Paciente nao encontrado", "Busca", JOptionPane.INFORMATION_MESSAGE);
+				}
 				
 			}
 		});

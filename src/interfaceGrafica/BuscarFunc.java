@@ -13,6 +13,12 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+import clinica.Funcionario;
+import clinica.Medico;
+import clinica.Paciente;
+import dados.DadosFuncionarios;
+import dados.DadosPacientes;
+
 public class BuscarFunc extends JFrame {
 
 	private JPanel contentPane;
@@ -30,6 +36,7 @@ public class BuscarFunc extends JFrame {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+				
 			}
 		});
 	}
@@ -73,7 +80,13 @@ public class BuscarFunc extends JFrame {
 		contentPane.add(botaoBuscar);
 		botaoBuscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Buscar", "Teste", JOptionPane.INFORMATION_MESSAGE);
+				Funcionario f = DadosFuncionarios.buscar(textFieldCpf.getText());
+				if(f!=null) {
+					JOptionPane.showMessageDialog(null, f.mostrarDados(), "Busca", JOptionPane.INFORMATION_MESSAGE);
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Funcionario nao encontrado", "Busca", JOptionPane.INFORMATION_MESSAGE);
+				}
 				
 			}
 		});
