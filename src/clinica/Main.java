@@ -1,7 +1,9 @@
 package clinica;
+import java.awt.EventQueue;
 import java.text.ParseException;
 import java.util.ArrayList;
 import dados.*;
+import interfaceGrafica.Menu;
 
 public class Main {
 
@@ -138,7 +140,7 @@ public class Main {
 			}
 			
 		System.out.println("\nExcluindo um paciente");
-		DadosPacientes.excluir("15635558674");
+		DadosPacientes.excluir("73385255600");
 		DadosPacientes.listar();
 		
 		
@@ -150,6 +152,17 @@ public class Main {
 			System.out.println("\nFalha na escrita");
 		}
 		
+		//Iniciando menu da Interface Grafica
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Menu window = new Menu();
+					window.frmClinica.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 		
 	}
 }
