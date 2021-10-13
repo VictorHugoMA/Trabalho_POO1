@@ -70,7 +70,7 @@ public class BuscarFunc extends JFrame {
 		contentPane.add(botaoVoltar);
 		botaoVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Voltar", "Teste", JOptionPane.INFORMATION_MESSAGE);
+				fecha();
 				
 			}
 		});
@@ -90,6 +90,9 @@ public class BuscarFunc extends JFrame {
 				
 			}
 		});
+	}
+	public void fecha() {
+		this.dispose();
 	}
 
 }
