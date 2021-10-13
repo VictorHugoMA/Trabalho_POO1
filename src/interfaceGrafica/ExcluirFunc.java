@@ -67,7 +67,7 @@ public class ExcluirFunc extends JFrame {
 		contentPane.add(botaoVoltar);
 		botaoVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Voltar", "Teste", JOptionPane.INFORMATION_MESSAGE);
+				fecha();
 				
 			}
 		});
@@ -86,6 +86,9 @@ public class ExcluirFunc extends JFrame {
 				
 			}
 		});
+	}
+	public void fecha() {
+		this.dispose();
 	}
 
 }
