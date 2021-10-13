@@ -195,8 +195,7 @@ public class CadastroPacSPlano extends JFrame {
 		getContentPane().add(botaoVoltar);
 		botaoVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Voltar", "Teste", JOptionPane.INFORMATION_MESSAGE);
-				
+				fecha();
 			}
 		});
 		
@@ -243,5 +242,8 @@ public class CadastroPacSPlano extends JFrame {
 		getContentPane().add(botaoEnviar);
 		
 		
+	}
+	public void fecha() {
+		this.dispose();
 	}
 }

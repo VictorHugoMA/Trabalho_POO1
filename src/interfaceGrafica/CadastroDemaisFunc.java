@@ -212,7 +212,7 @@ public class CadastroDemaisFunc extends JFrame {
 		getContentPane().add(botaoVoltar);
 		botaoVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Voltar", "Teste", JOptionPane.INFORMATION_MESSAGE);
+				fecha();
 				
 			}
 		});
@@ -259,7 +259,8 @@ public class CadastroDemaisFunc extends JFrame {
 		botaoEnviar.setBounds(312, 384, 89, 23);
 		getContentPane().add(botaoEnviar);
 		
-		
-		
+	}
+	public void fecha() {
+		this.dispose();
 	}
 }

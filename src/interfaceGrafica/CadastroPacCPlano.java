@@ -182,20 +182,20 @@ public class CadastroPacCPlano extends JFrame {
 		getContentPane().add(lblNewLabel_14);
 		
 		JLabel lblNewLabel_15 = new JLabel("Numero Carteirinha");
-		lblNewLabel_15.setBounds(10, 328, 106, 14);
+		lblNewLabel_15.setBounds(10, 328, 125, 14);
 		getContentPane().add(lblNewLabel_15);
 		
 		textFieldNumCart = new JTextField();
-		textFieldNumCart.setBounds(115, 325, 86, 20);
+		textFieldNumCart.setBounds(129, 325, 86, 20);
 		getContentPane().add(textFieldNumCart);
 		textFieldNumCart.setColumns(10);
 		
 		JLabel lblNewLabel_16 = new JLabel("Data Ingresso");
-		lblNewLabel_16.setBounds(213, 328, 86, 14);
+		lblNewLabel_16.setBounds(225, 328, 86, 14);
 		getContentPane().add(lblNewLabel_16);
 		
 		textFieldDataIng = new JTextField();
-		textFieldDataIng.setBounds(297, 325, 86, 20);
+		textFieldDataIng.setBounds(312, 325, 86, 20);
 		getContentPane().add(textFieldDataIng);
 		textFieldDataIng.setColumns(10);
 		
@@ -204,10 +204,12 @@ public class CadastroPacCPlano extends JFrame {
 		getContentPane().add(botaoVoltar);
 		botaoVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Voltar", "Teste", JOptionPane.INFORMATION_MESSAGE);
+				fecha();
+				//JOptionPane.showMessageDialog(null, "Voltar", "Teste", JOptionPane.INFORMATION_MESSAGE);
 				
 			}
 		});
+		
 		
 		JButton botaoEnviar = new JButton("Enviar");
 		botaoEnviar.addActionListener(new ActionListener() {
@@ -242,13 +244,18 @@ public class CadastroPacCPlano extends JFrame {
 				
 				
 				DadosPacientes.cadastrar(p);
-				JOptionPane.showMessageDialog(null, p.mostrarDados(), "Cadastro", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, p.mostrarDados(), "Cadastro", JOptionPane.INFORMATION_MESSAGE);					
+					
+			
 			}
 		});
 		botaoEnviar.setBounds(312, 384, 89, 23);
 		getContentPane().add(botaoEnviar);
 		
 		
+	}
+	public void fecha() {
+		this.dispose();
 	}
 
 }

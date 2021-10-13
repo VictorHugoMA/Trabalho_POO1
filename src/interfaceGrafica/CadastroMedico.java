@@ -225,7 +225,7 @@ public class CadastroMedico extends JFrame {
 		getContentPane().add(botaoVoltar);
 		botaoVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "Voltar", "Teste", JOptionPane.INFORMATION_MESSAGE);
+				fecha();
 				
 			}
 		});
@@ -277,5 +277,8 @@ public class CadastroMedico extends JFrame {
 		
 		
 		
+	}
+	public void fecha() {
+		this.dispose();
 	}
 }
