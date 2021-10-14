@@ -32,7 +32,7 @@ public class Main {
 		//Pacientes
 		PacCPlano pacC = new PacCPlano("Daniel", "88858413687", ps3);
 		PacCPlano pacC2 = new PacCPlano("Victor", "15635558674", "120", "Solteiro", end3, "Masc", "20/11/2001", ps, 12011, "10/05/2012", false);
-		PacCPlano pacC3 = new PacCPlano("Pedro", "02966058080", "111", "Solteiro", end2, "Masc", "10/08/1998", ps2, 11122, "05/10/2005", true);
+		PacCPlano pacC3 = new PacCPlano("Pedro", "08065895662", "111", "Solteiro", end2, "Masc", "10/08/1998", ps2, 11122, "05/10/2005", true);
 		PacSPlano pacS = new PacSPlano("Davi", "73385255600", end, "10/10/2002");
 		PacCPlano pacCTeste = new PacCPlano();
 		PacSPlano pacSTeste = new PacSPlano();
@@ -76,7 +76,12 @@ public class Main {
 		//Demais Funcionarios
 		DemaisFunc.setLimite(1);
 		DemaisFunc.setValorGrat(500f);
+		dm1.setCpf("38417251049");
 		dm1.setSalarioBase(1100f);
+		
+		//Planos de Saude
+		ps.setCnpj("84.967.331/0001-95");
+		ps.setEndereco(end3);
 		
 		//Consultas
 		c1.setStrDataHoraCons("02/09/2021 15:30");
@@ -120,6 +125,13 @@ public class Main {
 		DadosPacientes.cadastrar(pacS);
 		DadosPacientes.cadastrar(pacC3);
 		DadosPacientes.listar();
+		
+		DadosFuncionarios.cadastrar(m1);
+		DadosFuncionarios.cadastrar(dm1);
+		
+		DadosPlanoSaude.cadastrar(ps);
+		DadosPlanoSaude.cadastrar(ps2);
+		DadosPlanoSaude.cadastrar(ps3);
 		
 		System.out.println("\nBuscando um Paciente");
 		Paciente pBusca = DadosPacientes.buscar("15635558674");
