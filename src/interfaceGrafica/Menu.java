@@ -9,7 +9,6 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JSeparator;
 import java.awt.Color;
-import java.awt.Toolkit;
 
 public class Menu {
 
@@ -44,7 +43,7 @@ public class Menu {
 	private void initialize() {
 		frmClinica = new JFrame();
 		frmClinica.setTitle("Clinica Medica");
-		frmClinica.setBounds(100, 100, 556, 402);
+		frmClinica.setBounds(100, 100, 558, 403);
 		frmClinica.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmClinica.getContentPane().setLayout(null);
 		
@@ -333,7 +332,16 @@ public class Menu {
 		JButton botaoCalcSal = new JButton("Calcular Salario");
 		botaoCalcSal.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							CalculaSalario frame = new CalculaSalario();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 			}
 		});
 		botaoCalcSal.setBackground(Color.LIGHT_GRAY);
