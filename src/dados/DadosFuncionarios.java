@@ -20,11 +20,16 @@ public class DadosFuncionarios implements Serializable{
 	
 	public static Funcionario buscar(String cpf) {
 		Funcionario c = null;
+		String str = null;
 		
 		for(Funcionario f: DadosFuncionarios.vetFunc) {
-			if(f.getCpf().equals(ValidaCPF.imprimeCPF(cpf))) {
-				c = f;
-				break;
+			str = f.getCpf();
+			if(str !=null ) {
+				if(str.equals(ValidaCPF.imprimeCPF(cpf))) {
+					c = f;
+					break;
+				
+				}
 			}
 		}
 		return c;

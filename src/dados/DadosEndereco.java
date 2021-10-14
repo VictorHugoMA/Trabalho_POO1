@@ -23,7 +23,7 @@ public class DadosEndereco implements Serializable{
 		Endereco c = null;
 		
 		for(Endereco e: DadosEndereco.vetEnd) {
-			if(e.getCep().equals(cep) && e.getNum()==num) {
+			if(e.getCep() != null && e.getCep().equals(cep) && e.getNum()==num) {
 				c = e;
 				break;
 			}

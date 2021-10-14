@@ -20,11 +20,16 @@ public class DadosPacientes implements Serializable{
 	
 	public static Paciente buscar(String cpf) {
 		Paciente c = null;
+		String str = null;
 		
 		for(Paciente p: DadosPacientes.vetPac) {
-			if(p.getCpf().equals(ValidaCPF.imprimeCPF(cpf))) {
-				c = p;
-				break;
+			str = p.getCpf();
+			if(str !=null) {
+				if(str.equals(ValidaCPF.imprimeCPF(cpf))) {
+					c = p;
+					break;
+				
+				}
 			}
 		}
 		return c;

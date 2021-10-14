@@ -20,11 +20,16 @@ public class DadosConsulta implements Serializable{
 	
 	public static  ArrayList<Consulta> buscarPorMed(String cpf) {
 		ArrayList<Consulta> c = new ArrayList<>();
+		String str = null;
 		
 		for(Consulta p: DadosConsulta.vetCons) {
-			if(p.getMedico().getCpf().equals(ValidaCPF.imprimeCPF(cpf))) {
-				c.add(p);
-				break;
+			str = p.getMedico().getCpf();
+			if(str != null) {
+				if(str.equals(ValidaCPF.imprimeCPF(cpf))) {
+					c.add(p);
+					break;
+				
+				}
 			}
 		}
 		return c;

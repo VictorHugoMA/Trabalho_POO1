@@ -20,11 +20,16 @@ public class DadosExame implements Serializable{
 	
 	public static Exame buscar(String nome) {
 		Exame c = null;
+		String str = null;
 		
 		for(Exame e: DadosExame.vetExa) {
-			if(e.getNome().equals(nome)) {
-				c = e;
-				break;
+			str = e.getNome();
+			if(str!=null) {
+				if(str.equals(nome)) {
+					c = e;
+					break;
+				
+				}
 			}
 		}
 		return c;

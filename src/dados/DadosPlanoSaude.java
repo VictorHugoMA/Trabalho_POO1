@@ -20,11 +20,15 @@ public class DadosPlanoSaude implements Serializable{
 	
 	public static PlanoSaude buscar(String cnpj) {
 		PlanoSaude c = null;
+		String str = null;
 		
 		for(PlanoSaude p: DadosPlanoSaude.vetPlan) {
-			if(p.getCnpj().equals(cnpj)) {
-				c = p;
-				break;
+			str = p.getCnpj();
+			if(str!=null) {
+				if(str.equals(cnpj)) {
+					c = p;
+					break;				
+				}
 			}
 		}
 		return c;
