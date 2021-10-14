@@ -1,6 +1,5 @@
 package interfaceGrafica;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,17 +9,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
-import javax.swing.border.EmptyBorder;
-
 import clinica.Endereco;
 import clinica.Medico;
 import dados.DadosFuncionarios;
-
-import javax.swing.JFormattedTextField;
-import javax.swing.JComboBox;
 
 public class CadastroMedico extends JFrame {
 	private JLabel lblNewLabel;
@@ -61,7 +54,7 @@ public class CadastroMedico extends JFrame {
 	 */
 	public CadastroMedico() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, -29, 700, 551);
+		setBounds(0, -29, 672, 529);
 		getContentPane().setLayout(null);
 		
 		lblNewLabel = new JLabel("Nome:");
@@ -107,7 +100,7 @@ public class CadastroMedico extends JFrame {
 		textFieldEstCivil.setColumns(10);
 		
 		JSeparator separator = new JSeparator();
-		separator.setBounds(10, 153, 664, 2);
+		separator.setBounds(10, 153, 626, 2);
 		getContentPane().add(separator);
 		
 		JLabel lblNewLabel_7 = new JLabel("Endere\u00E7o");
@@ -169,7 +162,7 @@ public class CadastroMedico extends JFrame {
 		textFieldCep.setColumns(10);
 		
 		JSeparator separator_1 = new JSeparator();
-		separator_1.setBounds(10, 253, 664, 2);
+		separator_1.setBounds(10, 253, 626, 2);
 		getContentPane().add(separator_1);
 		
 		JLabel lblNewLabel_14 = new JLabel("Dados do Funcion\u00E1rio");
@@ -195,7 +188,7 @@ public class CadastroMedico extends JFrame {
 		getContentPane().add(lblNewLabel_15_1);
 		
 		JSeparator separator_1_1 = new JSeparator();
-		separator_1_1.setBounds(10, 352, 664, 2);
+		separator_1_1.setBounds(10, 352, 626, 2);
 		getContentPane().add(separator_1_1);
 		
 		JLabel lblNewLabel_14_1 = new JLabel("Dados do M\u00E9dico");
@@ -203,21 +196,21 @@ public class CadastroMedico extends JFrame {
 		getContentPane().add(lblNewLabel_14_1);
 		
 		JLabel lblNewLabel_15_2 = new JLabel("CRM");
-		lblNewLabel_15_2.setBounds(10, 385, 159, 14);
+		lblNewLabel_15_2.setBounds(10, 393, 51, 14);
 		getContentPane().add(lblNewLabel_15_2);
 		
 		textFieldCRM = new JTextField();
 		textFieldCRM.setColumns(10);
-		textFieldCRM.setBounds(83, 382, 86, 20);
+		textFieldCRM.setBounds(105, 390, 86, 20);
 		getContentPane().add(textFieldCRM);
 		
 		textFieldEsp = new JTextField();
 		textFieldEsp.setColumns(10);
-		textFieldEsp.setBounds(83, 409, 86, 20);
+		textFieldEsp.setBounds(105, 417, 86, 20);
 		getContentPane().add(textFieldEsp);
 		
 		JLabel lblNewLabel_15_2_1 = new JLabel("Especialidades");
-		lblNewLabel_15_2_1.setBounds(10, 412, 159, 14);
+		lblNewLabel_15_2_1.setBounds(10, 420, 159, 14);
 		getContentPane().add(lblNewLabel_15_2_1);
 		
 		JButton botaoVoltar = new JButton("Voltar");
