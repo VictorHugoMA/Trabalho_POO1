@@ -83,7 +83,7 @@ public class BuscarPlano extends JFrame {
 					JOptionPane.showMessageDialog(null, pla.toString(), "Busca", JOptionPane.INFORMATION_MESSAGE);
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Paciente nao encontrado", "Busca", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Plano nao encontrado", "Busca", JOptionPane.INFORMATION_MESSAGE);
 				}
 				
 			}
