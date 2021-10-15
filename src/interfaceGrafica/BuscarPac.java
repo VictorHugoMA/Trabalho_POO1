@@ -79,10 +79,10 @@ public class BuscarPac extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Paciente p = DadosPacientes.buscar(textFieldCpf.getText());
 				if(p!=null) {
-					JOptionPane.showMessageDialog(null, p.mostrarDados(), "Busca", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(contentPane, p.mostrarDados(), "Busca", JOptionPane.INFORMATION_MESSAGE);
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Paciente nao encontrado", "Busca", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(contentPane, "Paciente nao encontrado", "Busca", JOptionPane.INFORMATION_MESSAGE);
 				}
 				
 			}

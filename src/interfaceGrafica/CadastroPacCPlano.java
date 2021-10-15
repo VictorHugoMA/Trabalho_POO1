@@ -244,7 +244,7 @@ public class CadastroPacCPlano extends JFrame {
 				
 				
 				DadosPacientes.cadastrar(p);
-				JOptionPane.showMessageDialog(null, p.mostrarDados(), "Cadastro", JOptionPane.INFORMATION_MESSAGE);					
+				JOptionPane.showMessageDialog(getContentPane(), p.mostrarDados(), "Cadastro", JOptionPane.INFORMATION_MESSAGE);					
 					
 			
 			}

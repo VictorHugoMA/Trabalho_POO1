@@ -80,10 +80,10 @@ public class ExcluirPac extends JFrame {
 		botaoExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(DadosPacientes.excluir(textFieldCpf.getText())) {
-					JOptionPane.showMessageDialog(null, "Paciente excluido", "Excluir", JOptionPane.INFORMATION_MESSAGE);					
+					JOptionPane.showMessageDialog(contentPane, "Paciente excluido", "Excluir", JOptionPane.INFORMATION_MESSAGE);					
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Paciente nao encontrado", "Excluir", JOptionPane.INFORMATION_MESSAGE);					
+					JOptionPane.showMessageDialog(contentPane, "Paciente nao encontrado", "Excluir", JOptionPane.INFORMATION_MESSAGE);					
 				}
 				
 			}

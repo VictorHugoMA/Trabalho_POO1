@@ -261,7 +261,7 @@ public class CadastroMedico extends JFrame {
 				p.setCrm(numC);
 				
 				DadosFuncionarios.cadastrar(p);
-				JOptionPane.showMessageDialog(null, p.mostrarDados(), "Cadastro", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(getContentPane(), p.mostrarDados(), "Cadastro", JOptionPane.INFORMATION_MESSAGE);
 				
 			}
 		});

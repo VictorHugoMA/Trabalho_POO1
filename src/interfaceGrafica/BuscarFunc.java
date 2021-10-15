@@ -77,10 +77,10 @@ public class BuscarFunc extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Funcionario f = DadosFuncionarios.buscar(textFieldCpf.getText());
 				if(f!=null) {
-					JOptionPane.showMessageDialog(null, f.mostrarDados(), "Busca", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(contentPane, f.mostrarDados(), "Busca", JOptionPane.INFORMATION_MESSAGE);
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Funcionario nao encontrado", "Busca", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(contentPane, "Funcionario nao encontrado", "Busca", JOptionPane.INFORMATION_MESSAGE);
 				}
 				
 			}

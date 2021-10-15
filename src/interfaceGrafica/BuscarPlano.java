@@ -80,10 +80,10 @@ public class BuscarPlano extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				PlanoSaude pla = DadosPlanoSaude.buscar(textFieldCnpj.getText());
 				if(pla!=null) {
-					JOptionPane.showMessageDialog(null, pla.toString(), "Busca", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(contentPane, pla.toString(), "Busca", JOptionPane.INFORMATION_MESSAGE);
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Plano nao encontrado", "Busca", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(contentPane, "Plano nao encontrado", "Busca", JOptionPane.INFORMATION_MESSAGE);
 				}
 				
 			}

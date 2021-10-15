@@ -78,10 +78,10 @@ public class ExcluirFunc extends JFrame {
 		botaoExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(DadosFuncionarios.excluir(textFieldCpf.getText())) {
-					JOptionPane.showMessageDialog(null, "Funcionario excluido", "Excluir", JOptionPane.INFORMATION_MESSAGE);					
+					JOptionPane.showMessageDialog(contentPane, "Funcionario excluido", "Excluir", JOptionPane.INFORMATION_MESSAGE);					
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Funcionario nao encontrado", "Excluir", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(contentPane, "Funcionario nao encontrado", "Excluir", JOptionPane.INFORMATION_MESSAGE);
 				}
 				
 			}

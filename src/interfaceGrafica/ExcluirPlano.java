@@ -77,10 +77,10 @@ public class ExcluirPlano extends JFrame {
 		botaoExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(DadosPlanoSaude.excluir(textFieldCnpj.getText())){
-					JOptionPane.showMessageDialog(null, "Plano de Saude excluido", "Excluir", JOptionPane.INFORMATION_MESSAGE);					
+					JOptionPane.showMessageDialog(contentPane, "Plano de Saude excluido", "Excluir", JOptionPane.INFORMATION_MESSAGE);					
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Plano de Saude nao encontrado", "Excluir", JOptionPane.INFORMATION_MESSAGE);					
+					JOptionPane.showMessageDialog(contentPane, "Plano de Saude nao encontrado", "Excluir", JOptionPane.INFORMATION_MESSAGE);					
 				}
 				
 			}

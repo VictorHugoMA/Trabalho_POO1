@@ -78,10 +78,10 @@ public class ExcluirExame extends JFrame {
 		botaoExcluir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(DadosExame.excluir(textFieldNome.getText())) {
-					JOptionPane.showMessageDialog(null, "Exame excluido", "Excluir", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(contentPane, "Exame excluido", "Excluir", JOptionPane.INFORMATION_MESSAGE);
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "Exame nao encontrado", "Excluir", JOptionPane.INFORMATION_MESSAGE);					
+					JOptionPane.showMessageDialog(contentPane, "Exame nao encontrado", "Excluir", JOptionPane.INFORMATION_MESSAGE);					
 				}
 				
 			}

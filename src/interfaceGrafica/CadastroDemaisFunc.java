@@ -54,7 +54,7 @@ public class CadastroDemaisFunc extends JFrame {
 	 */
 	public CadastroDemaisFunc() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 700, 457);
+		setBounds(100, 100, 662, 457);
 		getContentPane().setLayout(null);
 		
 		lblNewLabel = new JLabel("Nome:");
@@ -76,7 +76,7 @@ public class CadastroDemaisFunc extends JFrame {
 		textFieldCpf.setColumns(10);
 		
 		JLabel lblNewLabel_2 = new JLabel("Cadastro Demais Funcionarios");
-		lblNewLabel_2.setBounds(253, 11, 168, 14);
+		lblNewLabel_2.setBounds(227, 11, 190, 14);
 		getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("RG:");
@@ -98,7 +98,7 @@ public class CadastroDemaisFunc extends JFrame {
 		textFieldEstCivil.setColumns(10);
 		
 		JSeparator separator = new JSeparator();
-		separator.setBounds(10, 153, 664, 2);
+		separator.setBounds(10, 153, 632, 2);
 		getContentPane().add(separator);
 		
 		JLabel lblNewLabel_7 = new JLabel("Endere\u00E7o");
@@ -160,7 +160,7 @@ public class CadastroDemaisFunc extends JFrame {
 		textFieldCep.setColumns(10);
 		
 		JSeparator separator_1 = new JSeparator();
-		separator_1.setBounds(10, 239, 664, 2);
+		separator_1.setBounds(10, 239, 632, 2);
 		getContentPane().add(separator_1);
 		
 		JLabel lblNewLabel_14 = new JLabel("Dados");
@@ -252,7 +252,7 @@ public class CadastroDemaisFunc extends JFrame {
 				
 				
 				DadosFuncionarios.cadastrar(p);
-				JOptionPane.showMessageDialog(null, p.mostrarDados(), "Cadastro", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(getContentPane(), p.mostrarDados(), "Cadastro", JOptionPane.INFORMATION_MESSAGE);
 				
 			}
 		});

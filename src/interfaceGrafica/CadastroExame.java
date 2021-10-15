@@ -85,7 +85,7 @@ public class CadastroExame extends JFrame {
 				Exame ex = new Exame(textFieldNome.getText());
 				
 				DadosExame.cadastrar(ex);
-				JOptionPane.showMessageDialog(null, ex.toString(), "Cadastro", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(contentPane, ex.toString(), "Cadastro", JOptionPane.INFORMATION_MESSAGE);
 				
 			}
 		});
