@@ -7,7 +7,16 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
+
+import dados.DadosConsulta;
+import dados.DadosEndereco;
+import dados.DadosExame;
+import dados.DadosFuncionarios;
+import dados.DadosPacientes;
+import dados.DadosPlanoSaude;
+
 import java.awt.Color;
 
 public class Menu {
@@ -347,6 +356,24 @@ public class Menu {
 		botaoCalcSal.setBackground(Color.LIGHT_GRAY);
 		botaoCalcSal.setBounds(208, 312, 125, 23);
 		frmClinica.getContentPane().add(botaoCalcSal);
+		
+		JButton botaoSalvar = new JButton("Salvar Dados");
+		botaoSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				DadosPacientes.gravarBin();
+				DadosFuncionarios.gravarBin();
+				DadosPlanoSaude.gravarBin();
+				DadosConsulta.gravarBin();
+				DadosExame.gravarBin();
+				DadosEndereco.gravarBin();
+				
+				JOptionPane.showMessageDialog(frmClinica, "Dados salvos", "Salvar", JOptionPane.INFORMATION_MESSAGE);
+				
+			}
+		});
+		botaoSalvar.setBackground(Color.LIGHT_GRAY);
+		botaoSalvar.setBounds(372, 312, 129, 23);
+		frmClinica.getContentPane().add(botaoSalvar);
 		
 	}
 }
