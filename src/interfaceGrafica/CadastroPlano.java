@@ -190,7 +190,7 @@ public class CadastroPlano extends JFrame {
 				pla.setValorCons(numV);
 				
 				DadosPlanoSaude.cadastrar(pla);
-				JOptionPane.showMessageDialog(null, "Cadastrado", "Cadastro", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(getContentPane(), pla.toString(), "Cadastro", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		botaoEnviar.setBounds(312, 384, 89, 23);
