@@ -10,12 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
 
-import dados.DadosConsulta;
-import dados.DadosEndereco;
-import dados.DadosExame;
-import dados.DadosFuncionarios;
-import dados.DadosPacientes;
-import dados.DadosPlanoSaude;
+import dados.*;
 
 import java.awt.Color;
 
@@ -331,7 +326,16 @@ public class Menu {
 		JButton botaoRealCons = new JButton("Realizar Consulta");
 		botaoRealCons.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							RealizarConsulta frame = new RealizarConsulta();
+							frame.setVisible(true);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});
 			}
 		});
 		botaoRealCons.setBackground(Color.LIGHT_GRAY);
