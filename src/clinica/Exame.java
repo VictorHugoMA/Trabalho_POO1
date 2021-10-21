@@ -26,7 +26,7 @@ public class Exame implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Exame:" + this.getNome();
+		return this.getNome();
 	}
 	
 	
