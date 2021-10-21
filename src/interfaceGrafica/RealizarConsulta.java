@@ -9,20 +9,25 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import clinica.*;
-import dados.*;
-
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class RealizarConsulta extends JFrame {
+import clinica.*;
+import dados.*;
+import javax.swing.JSeparator;
 
+
+public class RealizarConsulta extends JFrame {
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textFieldCpfMed;
 	private JTextField textFieldCpfPac;
 	private JTextField textFieldDataHora;
+	private JTextField textFieldSintomas;
+	private JTextField textFieldReceita;
+	private JTextField textFieldMedicamento;
+	private JTextField textFieldExame;
 
 	/**
 	 * Launch the application.
@@ -64,12 +69,12 @@ public class RealizarConsulta extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		
 		textFieldCpfMed = new JTextField();
-		textFieldCpfMed.setBounds(95, 51, 86, 20);
+		textFieldCpfMed.setBounds(105, 51, 86, 20);
 		contentPane.add(textFieldCpfMed);
 		textFieldCpfMed.setColumns(10);
 		
 		textFieldCpfPac = new JTextField();
-		textFieldCpfPac.setBounds(95, 76, 86, 20);
+		textFieldCpfPac.setBounds(105, 76, 86, 20);
 		contentPane.add(textFieldCpfPac);
 		textFieldCpfPac.setColumns(10);
 		
@@ -79,9 +84,54 @@ public class RealizarConsulta extends JFrame {
 		
 		textFieldDataHora = new JTextField();
 		textFieldDataHora.setToolTipText("dd/MM/aaaa HH:mm");
-		textFieldDataHora.setBounds(95, 101, 86, 20);
+		textFieldDataHora.setBounds(105, 101, 86, 20);
 		contentPane.add(textFieldDataHora);
 		textFieldDataHora.setColumns(10);
+		
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(10, 130, 524, 2);
+		contentPane.add(separator);
+		
+		JLabel lblNewLabel_4 = new JLabel("Diagn\u00F3stico");
+		lblNewLabel_4.setBounds(10, 143, 77, 14);
+		contentPane.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("Sintomas:");
+		lblNewLabel_5.setBounds(10, 168, 77, 14);
+		contentPane.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("Receita:");
+		lblNewLabel_6.setBounds(10, 193, 77, 14);
+		contentPane.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("Medicamento:");
+		lblNewLabel_7.setBounds(10, 218, 89, 14);
+		contentPane.add(lblNewLabel_7);
+		
+		textFieldSintomas = new JTextField();
+		textFieldSintomas.setBounds(105, 165, 86, 20);
+		contentPane.add(textFieldSintomas);
+		textFieldSintomas.setColumns(10);
+		
+		textFieldReceita = new JTextField();
+		textFieldReceita.setBounds(105, 190, 86, 20);
+		contentPane.add(textFieldReceita);
+		textFieldReceita.setColumns(10);
+		
+		textFieldMedicamento = new JTextField();
+		textFieldMedicamento.setBounds(105, 215, 86, 20);
+		contentPane.add(textFieldMedicamento);
+		textFieldMedicamento.setColumns(10);
+		
+		JLabel lblNewLabel_8 = new JLabel("Exame:");
+		lblNewLabel_8.setBounds(10, 243, 77, 14);
+		contentPane.add(lblNewLabel_8);
+		
+		textFieldExame = new JTextField();
+		textFieldExame.setBounds(105, 240, 86, 20);
+		contentPane.add(textFieldExame);
+		textFieldExame.setColumns(10);
 		
 		JButton botaoVoltar = new JButton("Voltar");
 		botaoVoltar.addActionListener(new ActionListener() {
@@ -109,7 +159,16 @@ public class RealizarConsulta extends JFrame {
 					}
 					try {
 						consulta.setStrDataHoraCons(textFieldDataHora.getText());
-					} catch (ParseException e1) {
+					} 
+					catch (ParseException e1) {
+					}
+					
+					consulta.setObsSintomas(textFieldSintomas.getText());
+					consulta.setReceita(textFieldReceita.getText());
+					consulta.addMedicamentos(textFieldMedicamento.getText());
+					Exame ex = DadosExame.buscar(textFieldExame.getText());
+					if(ex!=null) {
+						consulta.addExames(ex);
 					}
 					consulta.realizarCons();
 					JOptionPane.showMessageDialog(contentPane, consulta.mostrarDados(), "Consulta", JOptionPane.INFORMATION_MESSAGE);
