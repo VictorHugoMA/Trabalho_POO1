@@ -24,6 +24,7 @@ public class Main {
 		//Exames
 		Exame ex1 = new Exame("Ressonancia");
 		Exame ex2 = new Exame("Raio-X");
+		Exame ex3 = new Exame("Eletrocardiograma");
 		
 		//Funcionarios
 		Medico m1 = new Medico("Rafael", 200f);
@@ -90,7 +91,7 @@ public class Main {
 		c1.addMedicamentos("Novalgina");
 		
 		c2.setStrDataHoraCons("04/09/2021 10:30");
-		c1.setFuncMarc(dm1);
+		c2.setFuncMarc(dm1);
 		c2.realizarCons();
 		c2.setObsSintomas("Dor no dente");
 		c2.setReceita("Medicamento");
@@ -132,6 +133,10 @@ public class Main {
 		DadosPlanoSaude.cadastrar(ps);
 		DadosPlanoSaude.cadastrar(ps2);
 		DadosPlanoSaude.cadastrar(ps3);
+		
+		DadosExame.cadastrar(ex1);
+		DadosExame.cadastrar(ex2);		
+		DadosExame.cadastrar(ex3);		
 		
 		System.out.println("\nBuscando um Paciente");
 		Paciente pBusca = DadosPacientes.buscar("15635558674");
