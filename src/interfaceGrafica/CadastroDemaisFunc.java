@@ -1,21 +1,16 @@
 package interfaceGrafica;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
-import javax.swing.border.EmptyBorder;
 
 import clinica.DemaisFunc;
 import clinica.Endereco;
 import dados.DadosFuncionarios;
-import dados.DadosPacientes;
-
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 import java.text.ParseException;
 
 public class CadastroDemaisFunc extends JFrame {
+	private static final long serialVersionUID = 1L;
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
 	private JTextField textFieldCpf;
@@ -172,17 +167,18 @@ public class CadastroDemaisFunc extends JFrame {
         getContentPane().add(lblNewLabel_16);
         
         textFieldDataAdm = new JTextField();
-        textFieldDataAdm.setBounds(171, 283, 86, 20);
+        textFieldDataAdm.setToolTipText("dd/MM/yyyy");
+        textFieldDataAdm.setBounds(179, 283, 86, 20);
         getContentPane().add(textFieldDataAdm);
         textFieldDataAdm.setColumns(10);
         
         textFieldNumCartTrab = new JTextField();
         textFieldNumCartTrab.setColumns(10);
-        textFieldNumCartTrab.setBounds(171, 311, 86, 20);
+        textFieldNumCartTrab.setBounds(180, 314, 86, 20);
         getContentPane().add(textFieldNumCartTrab);
         
         JLabel lblNewLabel_17 = new JLabel("Numero Carteira de Trabalho");
-        lblNewLabel_17.setBounds(10, 314, 159, 14);
+        lblNewLabel_17.setBounds(10, 314, 181, 14);
         getContentPane().add(lblNewLabel_17);
 		
 		JLabel lblNewLabel_15 = new JLabel("");
@@ -190,21 +186,21 @@ public class CadastroDemaisFunc extends JFrame {
 		getContentPane().add(lblNewLabel_15);
 		
 		JLabel lblNewLabel_5 = new JLabel("Salario Base");
-		lblNewLabel_5.setBounds(271, 286, 76, 14);
+		lblNewLabel_5.setBounds(275, 286, 76, 14);
 		getContentPane().add(lblNewLabel_5);
 		
 		textFieldSalBase = new JTextField();
-		textFieldSalBase.setBounds(357, 283, 86, 20);
+		textFieldSalBase.setBounds(362, 283, 86, 20);
 		getContentPane().add(textFieldSalBase);
 		textFieldSalBase.setColumns(10);
 		
 		textFieldCargo = new JTextField();
-		textFieldCargo.setBounds(357, 311, 86, 20);
+		textFieldCargo.setBounds(362, 311, 86, 20);
 		getContentPane().add(textFieldCargo);
 		textFieldCargo.setColumns(10);
 		
 		JLabel lblNewLabel_6 = new JLabel("Cargo");
-		lblNewLabel_6.setBounds(281, 314, 46, 14);
+		lblNewLabel_6.setBounds(276, 317, 46, 14);
 		getContentPane().add(lblNewLabel_6);
 		
 		JButton botaoVoltar = new JButton("Voltar");
