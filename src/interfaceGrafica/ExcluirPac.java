@@ -1,25 +1,22 @@
 package interfaceGrafica;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import dados.DadosPacientes;
-import dados.DadosPlanoSaude;
-
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class ExcluirPac extends JFrame {
+import dados.DadosPacientes;
 
+
+public class ExcluirPac extends JFrame {
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textFieldCpf;
 

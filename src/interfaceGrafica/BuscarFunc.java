@@ -15,7 +15,7 @@ import dados.*;
 
 
 public class BuscarFunc extends JFrame {
-
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textFieldCpf;
 
@@ -70,7 +70,7 @@ public class BuscarFunc extends JFrame {
 			}
 		});
 		
-		JButton botaoBuscar = new JButton("Buscar");
+		JButton botaoBuscar = new JButton("Buscar");//Busca medicos e demais funcionarios
 		botaoBuscar.setBounds(218, 227, 89, 23);
 		contentPane.add(botaoBuscar);
 		botaoBuscar.addActionListener(new ActionListener() {

@@ -1,29 +1,23 @@
 package interfaceGrafica;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.text.ParseException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import clinica.DemaisFunc;
-import clinica.Endereco;
-import clinica.Exame;
-import clinica.PacSPlano;
-import dados.DadosExame;
-import dados.DadosFuncionarios;
-
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-public class CadastroExame extends JFrame {
+import clinica.Exame;
+import dados.DadosExame;
 
+
+public class CadastroExame extends JFrame {
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textFieldNome;
 
