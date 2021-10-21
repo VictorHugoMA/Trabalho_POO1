@@ -10,6 +10,7 @@ import java.awt.event.*;
 import java.text.ParseException;
 
 public class CadastroPacSPlano extends JFrame {
+	private static final long serialVersionUID = 1L;
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
 	private JTextField textFieldCpf;
@@ -103,6 +104,7 @@ public class CadastroPacSPlano extends JFrame {
 		textFieldSexo.setColumns(10);
 		
 		textFieldDatNasc = new JTextField();
+		textFieldDatNasc.setToolTipText("dd/MM/yyyy");
 		textFieldDatNasc.setBounds(83, 175, 86, 20);
 		getContentPane().add(textFieldDatNasc);
 		textFieldDatNasc.setColumns(10);

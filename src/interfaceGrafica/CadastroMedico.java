@@ -16,6 +16,7 @@ import clinica.Medico;
 import dados.DadosFuncionarios;
 
 public class CadastroMedico extends JFrame {
+	private static final long serialVersionUID = 1L;
 	private JLabel lblNewLabel;
 	private JLabel lblNewLabel_1;
 	private JTextField textFieldCpf;
@@ -174,6 +175,7 @@ public class CadastroMedico extends JFrame {
 		getContentPane().add(lblNewLabel_15);
 		
 		textFieldDataAdm = new JTextField();
+		textFieldDataAdm.setToolTipText("dd/MM/yyyy");
 		textFieldDataAdm.setBounds(171, 283, 86, 20);
 		getContentPane().add(textFieldDataAdm);
 		textFieldDataAdm.setColumns(10);
