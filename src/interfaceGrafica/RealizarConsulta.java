@@ -171,6 +171,7 @@ public class RealizarConsulta extends JFrame {
 						consulta.addExames(ex);
 					}
 					consulta.realizarCons();
+					DadosConsulta.cadastrar(consulta);
 					JOptionPane.showMessageDialog(contentPane, consulta.mostrarDados(), "Consulta", JOptionPane.INFORMATION_MESSAGE);
 					
 				}
